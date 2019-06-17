@@ -8,7 +8,11 @@ public class UiCanvasFader : MonoBehaviour
 
     void Start()
     {
-        FadeIn();
+        if (!this.gameObject.tag.Equals("miscDialog"))
+        {
+            FadeIn();
+        }
+
     }
 
     public void FadeIn()

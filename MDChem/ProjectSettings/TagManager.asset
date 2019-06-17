@@ -45,6 +45,18 @@ TagManager:
   - sfx
   - AuthManager
   - TimeManager
+  - _gui_
+  - pause
+  - returnMain
+  - alkali
+  - alkaline
+  - halogen
+  - noble
+  - transition
+  - metalloid
+  - 5A
+  - 6A
+  - miscDialog
   layers:
   - Default
   - TransparentFX

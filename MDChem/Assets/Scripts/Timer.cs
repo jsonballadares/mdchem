@@ -9,7 +9,7 @@ using UnityEngine.Networking;
 This script handles the timer as soon as the game starts the timer starts counting
 dependent on the time the game will branch out to various events foo.
 The game mode is a hybrid of time driven and score as the time is constantly counting down 
-but you have to meet the threshold of 100 score inorder to progress to the next sublevel
+but you have to meet the threshold of 100 score in order to progress to the next sublevel
  */
 
 public class Timer : MonoBehaviour
@@ -55,7 +55,7 @@ public class Timer : MonoBehaviour
     }
 
     /*
-	Once the thresh holds of time and score is reached the game needs to change the scene but we want to wait a couple 
+	Once the thresholds of time and score is reached the game needs to change the scene but we want to wait a couple 
 	of seconds to let the player finish. It also sets up the next scene and keeps track of the which scenes have been played. 
 	 */
     //TODO: dependent on the level selection and flow of the general ui this may need to be tweaked and played with 

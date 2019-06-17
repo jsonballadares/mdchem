@@ -122,6 +122,54 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level9/Level9c.unity
     guid: eea992a93b81b43da99df55f80912bb2
+  - enabled: 1
+    path: Assets/Scenes/Level1/BeginnerLevelOne/BeginnerLevel1a.unity
+    guid: 156164b5e09af43e09df044a7117fcd7
+  - enabled: 1
+    path: Assets/Scenes/Level1/BeginnerLevelOne/BeginnerLevel1b.unity
+    guid: 24a92e6574b594d0b841d5dcf25a6155
+  - enabled: 1
+    path: Assets/Scenes/Level1/BeginnerLevelOne/BeginnerLevel1c.unity
+    guid: ba9fb343f585f4bf5a54d67ef1ac2871
+  - enabled: 1
+    path: Assets/Scenes/Level1/BeginnerLevelOne/BeginnerLevel1d.unity
+    guid: 29c15ef40ce0b421a8b496235104e2e9
+  - enabled: 1
+    path: Assets/Scenes/Level2/BeginnerLevelTwo/BeginnerLevel2a.unity
+    guid: 9c19d4a8b57de4948a9b22d88e8eaf2f
+  - enabled: 1
+    path: Assets/Scenes/Level2/BeginnerLevelTwo/BeginnerLevel2b.unity
+    guid: 4ebfbf1d9d0804ebba65636128069896
+  - enabled: 1
+    path: Assets/Scenes/Level2/BeginnerLevelTwo/BeginnerLevel2c.unity
+    guid: 0ab3dbfd51a9c44ca82ee92650ecdc30
+  - enabled: 1
+    path: Assets/Scenes/Level2/BeginnerLevelTwo/BeginnerLevel2d.unity
+    guid: 163d0182197e24c699a8ba21bae3fd72
+  - enabled: 1
+    path: Assets/Scenes/Level3/BeginnerLevelThree/BeginnerLevel3a.unity
+    guid: a5b4f4243fc82496aa99708269118e4b
+  - enabled: 1
+    path: Assets/Scenes/Level3/BeginnerLevelThree/BeginnerLevel3b.unity
+    guid: d8614cbb44d64436aa3a27d5d0da2407
+  - enabled: 1
+    path: Assets/Scenes/Level3/BeginnerLevelThree/BeginnerLevel3c.unity
+    guid: ecb1afa435cda409eb79f4f095982f5e
+  - enabled: 1
+    path: Assets/Scenes/Level3/BeginnerLevelThree/BeginnerLevel3d.unity
+    guid: d556ee9a7ed8d4a0ba3353f6f6926e7f
+  - enabled: 1
+    path: Assets/Scenes/Level4/BeginnerLevelFour/BeginnerLevel4a.unity
+    guid: 493fdef28ea6846c8bb6009aec0f867c
+  - enabled: 1
+    path: Assets/Scenes/Level4/BeginnerLevelFour/BeginnerLevel4b.unity
+    guid: 3f16fc423e23f4d30bdd3b544f476827
+  - enabled: 1
+    path: Assets/Scenes/Level4/BeginnerLevelFour/BeginnerLevel4c.unity
+    guid: 99c0bd88ff44547dda2f1d6950d1eceb
+  - enabled: 1
+    path: Assets/Scenes/Level4/BeginnerLevelFour/BeginnerLevel4d.unity
+    guid: f083d550742ac4a9db4ed66601284db6
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

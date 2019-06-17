@@ -161,7 +161,7 @@ public class QuizManager : MonoBehaviour
         if (currentQuestion.isTrue)
         {
             QuizData q = new QuizData(currentQuestion.fact, QuizData.State.Correct, (int)TimeManager.timeThreshhold);
-            Debug.Log("THE QURRENT QUESITON IS ---> " + q.ToString());
+            Debug.Log("THE CURRENT QUESITON IS ---> " + q.ToString());
             QuizData.elementArray.Add(q);
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
@@ -175,7 +175,7 @@ public class QuizManager : MonoBehaviour
         else
         {
             QuizData q = new QuizData(currentQuestion.fact, QuizData.State.Incorrect, (int)TimeManager.timeThreshhold);
-            Debug.Log("THE QURRENT QUESITON IS ---> " + q.ToString());
+            Debug.Log("THE CURRENT QUESITON IS ---> " + q.ToString());
             QuizData.elementArray.Add(q);
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
@@ -195,7 +195,7 @@ public class QuizManager : MonoBehaviour
         if (!currentQuestion.isTrue)
         {
             QuizData q = new QuizData(currentQuestion.fact, QuizData.State.Correct, (int)TimeManager.timeThreshhold);
-            Debug.Log("THE QURRENT QUESITON IS ---> " + q.ToString());
+            Debug.Log("THE CURRENT QUESITON IS ---> " + q.ToString());
             QuizData.elementArray.Add(q);
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
@@ -208,7 +208,7 @@ public class QuizManager : MonoBehaviour
         else
         {
             QuizData q = new QuizData(currentQuestion.fact, QuizData.State.Incorrect, (int)TimeManager.timeThreshhold);
-            Debug.Log("THE QURRENT QUESITON IS ---> " + q.ToString());
+            Debug.Log("THE CURRENT QUESITON IS ---> " + q.ToString());
             QuizData.elementArray.Add(q);
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
@@ -237,6 +237,13 @@ public class QuizManager : MonoBehaviour
                 {
 
                     //3stars
+                    if(numWrong == 0)
+                    {
+                        if (AchievementManager.THIS)
+                        {
+                            AchievementManager.THIS.UnlockAchievement(0);
+                        }
+                    }
                     points = 500;
                     if (PlayerPrefs.GetInt("Level5_score") < points)
                     {
@@ -295,6 +302,14 @@ public class QuizManager : MonoBehaviour
                 Debug.Log("THE COUNT IS ----> " + FindObjectOfType<QuizCounter>().getCount());
                 if (FindObjectOfType<QuizCounter>().getCount() <= 0)
                 {
+                    if(numWrong == 0)
+                    {
+                        if (AchievementManager.THIS)
+                        {
+                            AchievementManager.THIS.UnlockAchievement(1);
+                            //just getting started!
+                        }
+                    }
 
                     //3stars
                     points = 500;

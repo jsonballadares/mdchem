@@ -79,6 +79,24 @@ public class LevelManager : MonoBehaviour
             /*
             this is the unlocks the stars for 
              */
+
+            if (PlayerPrefs.GetInt("Level" + button.LevelText.text + "_score") >= 700)
+            { 
+                if (AchievementManager.THIS)
+                {
+                    AchievementManager.THIS.UnlockAchievement(2);
+                }
+            }
+
+            if (PlayerPrefs.GetInt("Level" + button.LevelText.text + "_score") >= 300)
+            {
+                if (AchievementManager.THIS)
+                {
+                    AchievementManager.THIS.UnlockAchievement(4);
+                }
+            }
+
+
             if (PlayerPrefs.GetInt("Level" + button.LevelText.text + "_score") >= 500)
             {
                 button.star1Locked.SetActive(false);

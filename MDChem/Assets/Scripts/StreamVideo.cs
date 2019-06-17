@@ -62,22 +62,61 @@ public class StreamVideo : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name.Equals("LevelOneVideoAnimation"))
         {
-            FindObjectOfType<SceneFader>().FadeTo("Level1a");
+            //add some type of way via shared pref or something to check and see what mode the user is in
+            //if its beginner do beginner 1 - 4 levels
+            //else do advanced which is level1a etc
+            //for rn we will default to doing beginner untill we setup a way to toggle the users choice and save it through plays
+            //seems like a shared pref will do the job
+            //FindObjectOfType<SceneFader>().FadeTo("Level1a");
+            //also should we change the music? to the ones used in level 6 and 7?
+
+            if (GameValues.diffuclty == GameValues.Difficulties.Beginner)
+            {
+                FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel1a");
+            }
+            else
+            {
+                FindObjectOfType<SceneFader>().FadeTo("Level1a");
+            }
+
+
+
             FindObjectOfType<AudioManager>().Play("captainscurvy");
         }
         else if (SceneManager.GetActiveScene().name.Equals("LevelTwoVideoAnimation"))
         {
-            FindObjectOfType<SceneFader>().FadeTo("Level2a");
+            if (GameValues.diffuclty == GameValues.Difficulties.Beginner)
+            {
+                FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel2a");
+            }
+            else
+            {
+                FindObjectOfType<SceneFader>().FadeTo("Level2a");
+            }
             FindObjectOfType<AudioManager>().Play("captainscurvy");
         }
         else if (SceneManager.GetActiveScene().name.Equals("LevelThreeVideoAnimation"))
         {
-            FindObjectOfType<SceneFader>().FadeTo("Level3a");
+            if (GameValues.diffuclty == GameValues.Difficulties.Beginner)
+            {
+                FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel3a");
+            }
+            else
+            {
+                FindObjectOfType<SceneFader>().FadeTo("Level3a");
+            }
             FindObjectOfType<AudioManager>().Play("captainscurvy");
         }
         else if (SceneManager.GetActiveScene().name.Equals("LevelFourVideoAnimation"))
         {
-            FindObjectOfType<SceneFader>().FadeTo("Level4a");
+            if (GameValues.diffuclty == GameValues.Difficulties.Beginner)
+            {
+                FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel4a");
+            }
+            else
+            {
+                FindObjectOfType<SceneFader>().FadeTo("Level4a");
+            }
             FindObjectOfType<AudioManager>().Play("captainscurvy");
         }
         else if (SceneManager.GetActiveScene().name.Equals("LevelFiveVideoAnimation"))

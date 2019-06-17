@@ -33,7 +33,7 @@ public class Slots : MonoBehaviour, IDropHandler
         {
             Draggable.itemBeingDragged.transform.SetParent(transform);
         }
-        if (SceneManager.GetActiveScene().name.Contains("Level6") || SceneManager.GetActiveScene().name.Contains("Level7") || SceneManager.GetActiveScene().name.Contains("Level9") || SceneManager.GetActiveScene().name.Equals("Level10"))
+        if (SceneManager.GetActiveScene().name.Contains("Level1") || SceneManager.GetActiveScene().name.Contains("Level2") || SceneManager.GetActiveScene().name.Contains("Level3") || SceneManager.GetActiveScene().name.Contains("Level4") || SceneManager.GetActiveScene().name.Contains("Level6") || SceneManager.GetActiveScene().name.Contains("Level7") || SceneManager.GetActiveScene().name.Contains("Level9") || SceneManager.GetActiveScene().name.Equals("Level10"))
         {
             dragManager.checkDropPanel();
         }

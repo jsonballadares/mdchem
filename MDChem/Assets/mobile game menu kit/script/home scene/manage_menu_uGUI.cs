@@ -14,7 +14,9 @@ public class manage_menu_uGUI : MonoBehaviour
     [HideInInspector] public Transform logo_screen;
     public float show_logo_for_n_seconds;
     [HideInInspector] public Transform home_screen;
-    [HideInInspector] public Transform credit_screen;
+    public Transform credit_screen;
+    public Transform about_screen;
+     public Transform periodic_screen;
 
     [HideInInspector] public Transform options_screen;
     options_menu my_options;
@@ -57,8 +59,10 @@ public class manage_menu_uGUI : MonoBehaviour
 
     //target buttons for gamepad navigation
     [HideInInspector] public GameObject home_screen_target_button;
-    [HideInInspector] public GameObject credit_screen_target_button;
+    public GameObject credit_screen_target_button;
+    public GameObject about_screen_target_button;
     [HideInInspector] public GameObject options_screen_target_button;
+    [HideInInspector] public GameObject periodic_screen_target_button;
     [HideInInspector] public GameObject profile_screen_target_button;
     [HideInInspector] public GameObject new_profile_window_pad_target_button;
     [HideInInspector] public GameObject store_screen_target_button;
@@ -397,12 +401,12 @@ public class manage_menu_uGUI : MonoBehaviour
         //store
         if (my_game_master.store_enabled)
         {
-           // store_ico.SetActive(true);
+            // store_ico.SetActive(true);
         }
 
         else
         {
-           // store_ico.SetActive(false);
+            // store_ico.SetActive(false);
         }
 
 
@@ -864,6 +868,24 @@ public class manage_menu_uGUI : MonoBehaviour
         Mark_current_screen(credit_screen);
         Mark_this_button(credit_screen_target_button);
     }
+
+    
+    public void Go_to_about_screen()
+    {
+        my_game_master.Gui_sfx(my_game_master.tap_sfx);
+        home_screen.gameObject.SetActive(false);
+        Mark_current_screen(about_screen);
+        Mark_this_button(about_screen_target_button);
+    }
+
+        public void Go_to_periodic_screen()
+    {
+        my_game_master.Gui_sfx(my_game_master.tap_sfx);
+        home_screen.gameObject.SetActive(false);
+        Mark_current_screen(periodic_screen);
+        Mark_this_button(about_screen_target_button);
+    }
+
 
     public void Go_to_options_screen()
     {

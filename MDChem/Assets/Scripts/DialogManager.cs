@@ -221,7 +221,7 @@ public class DialogManager : MonoBehaviour
             }
             //FindObjectOfType<AudioManager>().Stop("masterylevelmusic");
         }
-        else if (SceneManager.GetActiveScene().name.Contains("Level6") || SceneManager.GetActiveScene().name.Contains("Level7") || SceneManager.GetActiveScene().name.Contains("Level9") || SceneManager.GetActiveScene().name.Equals("Level10"))
+        else if (SceneManager.GetActiveScene().name.Contains("Level6") || SceneManager.GetActiveScene().name.Contains("Level7") || SceneManager.GetActiveScene().name.Contains("Level9") || SceneManager.GetActiveScene().name.Equals("Level10") || SceneManager.GetActiveScene().name.Contains("Beginner"))
         {
             if (GameObject.FindGameObjectWithTag("QuizCounter"))
             {
@@ -520,6 +520,46 @@ public class DialogManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name.Equals("Level10"))
         {
             FindObjectOfType<SceneFader>().FadeTo("Level10");
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("BeginnerLevel1d"))
+        {
+            if (GameObject.FindGameObjectWithTag("QuizCounter"))
+            {
+                FindObjectOfType<QuizCounter>().Destroy();
+            }
+            FindObjectOfType<AudioManager>().Stop("quizgamenoise");
+            PlayerPrefs.SetInt("Level2", 1); //unlocks level2
+            FindObjectOfType<SceneFader>().FadeTo("LevelTwoVideoAnimation");
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("BeginnerLevel2d"))
+        {
+            if (GameObject.FindGameObjectWithTag("QuizCounter"))
+            {
+                FindObjectOfType<QuizCounter>().Destroy();
+            }
+            FindObjectOfType<AudioManager>().Stop("quizgamenoise");
+            PlayerPrefs.SetInt("Level3", 1); //unlocks level3
+            FindObjectOfType<SceneFader>().FadeTo("LevelThreeVideoAnimation");
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("BeginnerLevel3d"))
+        {
+            if (GameObject.FindGameObjectWithTag("QuizCounter"))
+            {
+                FindObjectOfType<QuizCounter>().Destroy();
+            }
+            FindObjectOfType<AudioManager>().Stop("quizgamenoise");
+            PlayerPrefs.SetInt("Level4", 1); //unlocks level3
+            FindObjectOfType<SceneFader>().FadeTo("LevelFourVideoAnimation");
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("BeginnerLevel4d"))
+        {
+            if (GameObject.FindGameObjectWithTag("QuizCounter"))
+            {
+                FindObjectOfType<QuizCounter>().Destroy();
+            }
+            FindObjectOfType<AudioManager>().Stop("quizgamenoise");
+            PlayerPrefs.SetInt("Level5", 1); //unlocks level3
+            FindObjectOfType<SceneFader>().FadeTo("Level5");
         }
 
     }
