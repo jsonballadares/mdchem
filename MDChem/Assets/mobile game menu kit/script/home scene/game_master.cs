@@ -1272,20 +1272,20 @@ public class game_master : MonoBehaviour {
 
 	public void Gui_sfx(AudioClip gui_sound)
 	{
-		if (sfx_on[current_profile_selected] && gui_sound)
-		{
-			if(!sfx_source.isPlaying)
-			{
-				sfx_source.PlayOneShot(gui_sound);
-				sfx_source.loop = false;
-			}
-			else
-			{
-				sfx_source.Stop();
-				sfx_source.PlayOneShot(gui_sound);
-				sfx_source.loop = false;
-			}
-		}
+		// if (sfx_on[current_profile_selected] && gui_sound)
+		// {
+		// 	if(!sfx_source.isPlaying)
+		// 	{
+		// 		sfx_source.PlayOneShot(gui_sound);
+		// 		sfx_source.loop = false;
+		// 	}
+		// 	else
+		// 	{
+		// 		sfx_source.Stop();
+		// 		sfx_source.PlayOneShot(gui_sound);
+		// 		sfx_source.loop = false;
+		// 	}
+		// }
 	}
 	#endregion
 

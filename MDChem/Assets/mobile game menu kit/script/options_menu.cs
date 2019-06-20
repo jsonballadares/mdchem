@@ -45,6 +45,7 @@ public class options_menu : MonoBehaviour
 
     public void Music_on_off()
     {
+        Debug.Log("MUSIC_ON_OFF CALLED");
         if (game_master.music_on[my_game_master.current_profile_selected])
         {
             my_game_master.Music_on_off(false);
@@ -69,6 +70,7 @@ public class options_menu : MonoBehaviour
 
     public void Sfx_on_off()
     {
+        Debug.Log("SFX_ON_OFF CALLED");
         if (game_master.sfx_on[my_game_master.current_profile_selected])
         {
             my_game_master.Sfx_on_off(false);

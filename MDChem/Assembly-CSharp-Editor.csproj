@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6C49B136-D420-A40B-D636-461CD8170C60}</ProjectGuid>
+    <ProjectGuid>{D6491B03-D3AC-4272-99A0-0D37B32E49C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -62,19 +62,19 @@
      <None Include="Assets\Firebase\Editor\FirebaseAuth_version-5.4.3_manifest.txt" />
      <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.95.0.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -317,58 +317,58 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Google.IOSResolver_v1.2.95.0">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.95.0.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.95.0.dll</HintPath>
  </Reference>
  <Reference Include="Google.VersionHandler">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
  </Reference>
  <Reference Include="Google.VersionHandlerImpl_v1.2.95.0">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.95.0.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.95.0.dll</HintPath>
  </Reference>
  <Reference Include="Google.JarResolver_v1.2.95.0">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.95.0.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.95.0.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Compat">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Tasks">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
  </Reference>
  <Reference Include="Firebase.Auth">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
  </Reference>
  <Reference Include="Google.MiniJson">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
  </Reference>
  <Reference Include="Firebase.App">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
  </Reference>
  <Reference Include="Firebase.Platform">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
  </Reference>
  <Reference Include="Firebase.Editor">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements.Editor">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>/Users/tvvizzlemac/Unity Project/MDChem latest/MDChem 2/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>/Users/tvvizzlemac/Unity Project/MDChem/MDChem/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -733,7 +733,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{4BFA6945-C87E-EFF5-9B70-C4AC095B77B0}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{1C145BA3-28C5-F6D2-2066-A5391FC4EA00}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

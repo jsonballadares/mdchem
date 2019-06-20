@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        //PlayerPrefs.DeleteAll();
         if (insance == null)
         {
             insance = this;
@@ -80,6 +81,7 @@ public class AudioManager : MonoBehaviour
 
     public void changeAudioLevelMusic(float level)
     {
+        Debug.Log("CHANGING THE MUSIC AUDIO LEVEL");
         foreach (Sound s in sounds)
         {
             if (s.tag.Equals("music"))
@@ -92,6 +94,7 @@ public class AudioManager : MonoBehaviour
 
     public void changeAudioLevelSFX(float level)
     {
+        Debug.Log("CHANGING THE SFX AUDIO LEVEL");
         foreach (Sound s in sounds)
         {
             if (s.tag.Equals("sfx"))
