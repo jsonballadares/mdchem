@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class UpdateUserList : MonoBehaviour
 {
-    public void onOkButtonPress()
+    public void onLoginButtonPress()
     {
         StartCoroutine(PostCrt());
     }
