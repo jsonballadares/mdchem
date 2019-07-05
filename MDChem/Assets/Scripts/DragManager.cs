@@ -1595,7 +1595,7 @@ public class DragManager : MonoBehaviour
 
                 if (dropPanel.childCount > 0)
                 {
-                    if (answer.Equals("al3po33"))
+                    if (answer.Equals("al3p033"))
                     {
                         right();
                         correctDialogTrigger("AlPO\u2083");

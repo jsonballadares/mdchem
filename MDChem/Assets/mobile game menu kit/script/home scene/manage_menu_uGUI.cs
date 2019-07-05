@@ -891,7 +891,7 @@ public class manage_menu_uGUI : MonoBehaviour
     {
         my_game_master.Gui_sfx(my_game_master.tap_sfx);
         home_screen.gameObject.SetActive(false);
-        my_options.Start_me();
+//        my_options.Start_me();
         Mark_current_screen(options_screen);
         Mark_this_button(options_screen_target_button);
     }
@@ -969,7 +969,7 @@ public class manage_menu_uGUI : MonoBehaviour
         if (update_world_and_stage_screen)
         {
             Update_profile_name(true);
-            my_options.Start_me();
+//            my_options.Start_me();
         }
 
         if (stage_ico_update_animation_is_running)

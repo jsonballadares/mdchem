@@ -1733,6 +1733,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 176130, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
+      propertyPath: m_Name
+      value: BackMain
+      objectReference: {fileID: 0}
     - target: {fileID: 423140, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1780,10 +1784,6 @@ PrefabInstance:
     - target: {fileID: 193122, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 176130, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
-      propertyPath: m_Name
-      value: BackMain
       objectReference: {fileID: 0}
     - target: {fileID: 11424766, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
       propertyPath: m_Colors.m_ColorMultiplier
@@ -2186,6 +2186,12 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 988561725328431257, guid: a92abeaf6985e42f4811c371ffa944a5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: 80ecdf2be230880498d1946d0133774b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92abeaf6985e42f4811c371ffa944a5, type: 3}
 --- !u!224 &655454880 stripped

@@ -205,7 +205,7 @@ MonoBehaviour:
     myFontColor: 0
     color: {r: 1, g: 1, b: 1, a: 1}
   totalWorlds: 2
-  showWorls: 1
+  showWorls: 0
   worldButtonIcons:
   - {fileID: 21300000, guid: 113d4a641922edb4eaa397e359ae5829, type: 3}
   - {fileID: 21300000, guid: 3eb4509b01205694cb4918c8f3d8d9b3, type: 3}

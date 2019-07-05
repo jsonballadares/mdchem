@@ -17,7 +17,6 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        //PlayerPrefs.DeleteAll();
         if (insance == null)
         {
             insance = this;
@@ -36,6 +35,19 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.loop = s.loop;
         }
+    }
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("music"))
+        {
+            this.changeAudioLevelMusic(PlayerPrefs.GetFloat("music"));
+        }
+        if (PlayerPrefs.HasKey("sfx"))
+        {
+            this.changeAudioLevelSFX(PlayerPrefs.GetFloat("sfx"));
+        }
+
     }
     public void Play(string name)
     {

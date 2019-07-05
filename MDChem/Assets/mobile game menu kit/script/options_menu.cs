@@ -4,168 +4,107 @@ using System.Collections;
 
 public class options_menu : MonoBehaviour
 {
-
-    public OptionSoundElementSkin music_ico;
     public Slider music_slider;
 
-    public OptionSoundElementSkin sfx_ico;
     public Slider sfx_slider;
 
-    public OptionSoundElementSkin voice_ico;
-    public Slider voice_slider;
+    public Image musicImage;
+    public Image sfxImage;
 
-    game_master my_game_master;
+    public Sprite soundOn;
+    public Sprite soundOff;
 
-    // Use this for initialization
-    void Start()
+    /*
+    TODO 
+    save user changes to player pref and load them in so they dont have to constantly change their settings
+     */
+
+    void Awake()
     {
-    }
-
-    public void Start_me()
-    {
-
-        if (game_master.game_master_obj)
+        if (!PlayerPrefs.HasKey("music"))
         {
-            my_game_master = (game_master)game_master.game_master_obj.GetComponent("game_master");
-
-            //music∂
-            my_game_master.Music_on_off(game_master.music_on[my_game_master.current_profile_selected]);
-
-            //sfx
-            my_game_master.Sfx_on_off(game_master.sfx_on[my_game_master.current_profile_selected]);
-
-            //voice
-            my_game_master.Voice_on_off(game_master.voice_on[my_game_master.current_profile_selected]);
-
-            Update_sound_icons();
-
-
-        }
-    }
-
-    public void Music_on_off()
-    {
-        Debug.Log("MUSIC_ON_OFF CALLED");
-        if (game_master.music_on[my_game_master.current_profile_selected])
-        {
-            my_game_master.Music_on_off(false);
-            if (GameObject.FindGameObjectWithTag("AudioManager") != null)
-            {
-                FindObjectOfType<AudioManager>().changeAudioLevelMusic(0f);
-            }
-
+            PlayerPrefs.SetFloat("music", music_slider.value);
         }
         else
         {
-            my_game_master.Music_on_off(true);
+            music_slider.value = PlayerPrefs.GetFloat("music");
+        }
+
+        if (!PlayerPrefs.HasKey("sfx"))
+        {
+            PlayerPrefs.SetFloat("sfx", sfx_slider.value);
+        }
+        else
+        {
+            sfx_slider.value = PlayerPrefs.GetFloat("sfx");
+        }
+    }
+
+    public void changeMusicIconOFF()
+    {
+        if (musicImage.sprite == soundOff)
+        {
+            musicImage.sprite = soundOn;
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
                 FindObjectOfType<AudioManager>().changeAudioLevelMusic(music_slider.value);
             }
         }
-
-        Update_sound_icons();
-        my_game_master.Gui_sfx(my_game_master.tap_sfx);
+        else
+        {
+            musicImage.sprite = soundOff;
+            if (GameObject.FindGameObjectWithTag("AudioManager") != null)
+            {
+                FindObjectOfType<AudioManager>().changeAudioLevelMusic(0f);
+                music_slider.value = 0f;
+            }
+        }
     }
 
-    public void Sfx_on_off()
+    public void sfxMusicIconOFF()
     {
-        Debug.Log("SFX_ON_OFF CALLED");
-        if (game_master.sfx_on[my_game_master.current_profile_selected])
+
+        if (sfxImage.sprite == soundOff)
         {
-            my_game_master.Sfx_on_off(false);
+            sfxImage.sprite = soundOn;
+            if (GameObject.FindGameObjectWithTag("AudioManager") != null)
+            {
+                FindObjectOfType<AudioManager>().changeAudioLevelSFX(sfx_slider.value);
+                
+            }
+        }
+        else
+        {
+            sfxImage.sprite = soundOff;
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
                 FindObjectOfType<AudioManager>().changeAudioLevelSFX(0f);
-            }
-        }
-        else
-        {
-            my_game_master.Sfx_on_off(true);
-            if (GameObject.FindGameObjectWithTag("AudioManager") != null)
-            {
-                 FindObjectOfType<AudioManager>().changeAudioLevelSFX(sfx_slider.value);
+                sfx_slider.value = 0f;
             }
         }
 
-        Update_sound_icons();
-        my_game_master.Gui_sfx(my_game_master.tap_sfx);
-    }
-
-    public void Voice_on_off()
-    {
-        if (game_master.voice_on[my_game_master.current_profile_selected])
-        {
-            my_game_master.Voice_on_off(false);
-        }
-        else
-        {
-            my_game_master.Voice_on_off(true);
-        }
-
-        Update_sound_icons();
-        my_game_master.Gui_sfx(my_game_master.tap_sfx);
-    }
-
-    void Update_sound_icons()
-    {
-        if (game_master.music_on[my_game_master.current_profile_selected])
-        {
-            music_ico.UpdateIcon(true);
-            music_slider.interactable = true;
-        }
-        else
-        {
-            music_ico.UpdateIcon(false);
-            music_slider.interactable = false;
-        }
-
-        if (game_master.sfx_on[my_game_master.current_profile_selected])
-        {
-            sfx_ico.UpdateIcon(true);
-            sfx_slider.interactable = true;
-        }
-        else
-        {
-            sfx_ico.UpdateIcon(false);
-            sfx_slider.interactable = false;
-        }
-
-        if (game_master.voice_on[my_game_master.current_profile_selected])
-        {
-            voice_ico.UpdateIcon(true);
-            voice_slider.interactable = true;
-        }
-        else
-        {
-            voice_ico.UpdateIcon(false);
-            voice_slider.interactable = false;
-        }
     }
 
     public void Update_music_volume()
     {
-        game_master.music_volume[my_game_master.current_profile_selected] = music_slider.value;
+
         if (GameObject.FindGameObjectWithTag("AudioManager") != null)
         {
-            FindObjectOfType<AudioManager>().changeAudioLevelMusic(game_master.music_volume[my_game_master.current_profile_selected]);
+            FindObjectOfType<AudioManager>().changeAudioLevelMusic(music_slider.value);
         }
-        my_game_master.Music_on_off(true);
     }
 
     public void Update_sfx_volume()
     {
-        game_master.sfx_volume[my_game_master.current_profile_selected] = sfx_slider.value;
         if (GameObject.FindGameObjectWithTag("AudioManager") != null)
         {
-            FindObjectOfType<AudioManager>().changeAudioLevelSFX(game_master.sfx_volume[my_game_master.current_profile_selected]);
+            FindObjectOfType<AudioManager>().changeAudioLevelSFX(sfx_slider.value);
         }
-        my_game_master.Sfx_on_off(true);
     }
 
-    public void Update_voice_volume()
+    public void onExitOptions()
     {
-        game_master.voice_volume[my_game_master.current_profile_selected] = voice_slider.value;
-        my_game_master.Voice_on_off(true);
+        PlayerPrefs.SetFloat("music", music_slider.value);
+        PlayerPrefs.SetFloat("sfx", sfx_slider.value);
     }
 }

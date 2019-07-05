@@ -371,7 +371,7 @@ public class game_uGUI : MonoBehaviour {
 				}
 
 			options_screen.gameObject.SetActive(true);
-			my_options.Start_me();
+			//my_options.Start_me();
 			Mark_this_button(options_screen_target_button);
 		}
 		else

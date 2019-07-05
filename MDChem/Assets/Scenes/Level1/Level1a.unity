@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 176130, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
+      propertyPath: m_Name
+      value: BackMain
+      objectReference: {fileID: 0}
     - target: {fileID: 423140, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -243,10 +247,6 @@ PrefabInstance:
     - target: {fileID: 193122, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 176130, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
-      propertyPath: m_Name
-      value: BackMain
       objectReference: {fileID: 0}
     - target: {fileID: 11424766, guid: 861cb3ae427ec9644bf6bff9313c76d2, type: 3}
       propertyPath: m_Colors.m_ColorMultiplier
@@ -1803,11 +1803,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 988561726168827928, guid: a92abeaf6985e42f4811c371ffa944a5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 988561724103354024, guid: a92abeaf6985e42f4811c371ffa944a5,
         type: 3}
       propertyPath: m_Text
@@ -1943,10 +1938,25 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 988561726168828006, guid: a92abeaf6985e42f4811c371ffa944a5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 988561726168828006, guid: a92abeaf6985e42f4811c371ffa944a5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8871679066256979534, guid: a92abeaf6985e42f4811c371ffa944a5,
         type: 3}
       propertyPath: m_Alpha
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988561726168827928, guid: a92abeaf6985e42f4811c371ffa944a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92abeaf6985e42f4811c371ffa944a5, type: 3}

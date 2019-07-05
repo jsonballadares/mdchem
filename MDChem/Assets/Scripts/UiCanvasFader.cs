@@ -12,7 +12,6 @@ public class UiCanvasFader : MonoBehaviour
         {
             FadeIn();
         }
-
     }
 
     public void FadeIn()
