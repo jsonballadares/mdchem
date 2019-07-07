@@ -28,7 +28,7 @@ public class WebRequest : MonoBehaviour
         Debug.Log("POSTCRT IS CALLED");
         WWWForm form = new WWWForm();
 
-        using (UnityWebRequest www = UnityWebRequest.Post("https://www.rrmi.co/api/save", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://www.mdchem.app/api/save", form))
         {
             byte[] rawData = System.Text.Encoding.ASCII.GetBytes(data);
             UploadHandler uploader = new UploadHandlerRaw(rawData);

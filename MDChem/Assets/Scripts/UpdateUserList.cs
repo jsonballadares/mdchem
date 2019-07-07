@@ -15,7 +15,7 @@ public class UpdateUserList : MonoBehaviour
         Debug.Log("POSTCRT IS CALLED");
         WWWForm form = new WWWForm();
 
-        using (UnityWebRequest www = UnityWebRequest.Get("https://www.rrmi.co/api/updatestudent"))
+        using (UnityWebRequest www = UnityWebRequest.Get("https://www.mdchem.app/api/updatestudent"))
         {
 
             yield return www.SendWebRequest();
