@@ -54,7 +54,7 @@ public class HomeManager : MonoBehaviour
         to delete all the player prefs and ask the user to sign in/up
         */
 
-        if (PlayerPrefs.GetString("ui") == null || PlayerPrefs.GetString("ui") == "")
+        if (!PlayerPrefs.HasKey("ui") || PlayerPrefs.GetString("ui") == null || PlayerPrefs.GetString("ui").Equals(""))
         {
             Debug.Log("UUID IS NULL");
             PlayerPrefs.DeleteAll();

@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-/Users/tvvizzlemac/Unity Project/MDChem/androidbuildtest.apk
+/Users/tvvizzlemac/androidbuildtest.apk
 SceneListBegin?
 Assets/Scenes/Menus/Home.unity
 Assets/Scenes/Menus/LevelSelector.unity
@@ -37,6 +37,22 @@ Assets/Scenes/Level8/Level8.unity
 Assets/Scenes/Level9/Level9a.unity
 Assets/Scenes/Level9/Level9b.unity
 Assets/Scenes/Level9/Level9c.unity
+Assets/Scenes/Level1/BeginnerLevelOne/BeginnerLevel1a.unity
+Assets/Scenes/Level1/BeginnerLevelOne/BeginnerLevel1b.unity
+Assets/Scenes/Level1/BeginnerLevelOne/BeginnerLevel1c.unity
+Assets/Scenes/Level1/BeginnerLevelOne/BeginnerLevel1d.unity
+Assets/Scenes/Level2/BeginnerLevelTwo/BeginnerLevel2a.unity
+Assets/Scenes/Level2/BeginnerLevelTwo/BeginnerLevel2b.unity
+Assets/Scenes/Level2/BeginnerLevelTwo/BeginnerLevel2c.unity
+Assets/Scenes/Level2/BeginnerLevelTwo/BeginnerLevel2d.unity
+Assets/Scenes/Level3/BeginnerLevelThree/BeginnerLevel3a.unity
+Assets/Scenes/Level3/BeginnerLevelThree/BeginnerLevel3b.unity
+Assets/Scenes/Level3/BeginnerLevelThree/BeginnerLevel3c.unity
+Assets/Scenes/Level3/BeginnerLevelThree/BeginnerLevel3d.unity
+Assets/Scenes/Level4/BeginnerLevelFour/BeginnerLevel4a.unity
+Assets/Scenes/Level4/BeginnerLevelFour/BeginnerLevel4b.unity
+Assets/Scenes/Level4/BeginnerLevelFour/BeginnerLevel4c.unity
+Assets/Scenes/Level4/BeginnerLevelFour/BeginnerLevel4d.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.QuizCounter
 86c1185793c65826151c3c063d343c4f Assembly-CSharp.dll:.DropPanelController
@@ -57,7 +73,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.P
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 115c369551df09395489957f1acffa9e Assembly-CSharp.dll:.stage_ico_uGUI
 26add067ecddc93dbb36ccc0f215e59c Assembly-CSharp.dll:.manual_stage_screen
-b2335bc380bf04f1ec050892089e8a05 Assembly-CSharp.dll:.rank_manager
+5036876700b707f15746b865e1ffa921 Assembly-CSharp.dll:.rank_manager
 32ec90cc49b66285fe743d43502cc195 Assembly-CSharp.dll:.continue_window
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.AuthManager
 638f746554a897eb40dd7cc39f21cc08 Assembly-CSharp.dll:.WorldButtonSkin
@@ -69,6 +85,7 @@ e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventH
 ad79a1f117837c29ba119946813f5402 Assembly-CSharp.dll:.TextSkin
 e49d7ccb02d1f9193fc3387b2a062855 Assembly-CSharp.dll:.GetAchievement
 945a444790f153674ef2a18ac652c399 Assembly-CSharp.dll:.UI_Skin
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PauseMenuExample
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DragHandler
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.Editor.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -140,8 +157,10 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 02de2dd4c9849832b287105836342ca4 Assembly-CSharp.dll:.new_profile_pad
 225a7f0550de56270a5eee107395e162 Assembly-CSharp.dll:.get_bananas
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Score
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.UpdateUserList
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.end_uGUI
 840bf10d9c5436fc62762ca7604ee5cd Assembly-CSharp.dll:.AudioManager
+9c646e21e15a9d24a17a12d409458a5a Assembly-CSharp.dll:.SumPause
 71bb6a6b6c8f052f948db64c7dd3ca4f Firebase.Platform.dll:Firebase.Platform.FirebaseMonoBehaviour
 8493f1879b28282cab94e83dccd9820e Assembly-CSharp.dll:.Info_bar
 428cf8e07752c5b63529b7dcdef32007 Assembly-CSharp.dll:.death_collider
@@ -187,13 +206,14 @@ cc1a6ac405781ff5ed1e59883c908b93 Assembly-CSharp.dll:.store_item_manager
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 ef449ad36759bdea8806dd73f66166df Assembly-CSharp.dll:.ScreenSkin
 27fac96bc2b0794a6448c2e2243d4617 Assembly-CSharp.dll:.LevelSelector
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DialogManager
+b8fc5e97498a866327ecec200c000648 Assembly-CSharp.dll:.DialogManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Draggable
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 5d22a173f26e1199f5fd6755c299cf80 Assembly-CSharp.dll:.QuizManager
 6e40e61a42892f4f3ac96156be809f3d Assembly-CSharp.dll:.AchievementScreen
 01315fda62ecc2a2e508f8cb91d0c253 Assembly-CSharp.dll:.game_master
 283180c4c8a2af70b25ce55088fa511c Assembly-CSharp.dll:.AchievementManager
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MiscDialogHandler
 4b5a5d223f225ccc034a3ef4e19060c4 Assembly-CSharp.dll:.StreamVideo
 a3ebecbf08190cec380de0221389a06f Assembly-CSharp.dll:.pageDotSkin
 ad36509bf9f1f320abebb58f56455345 Assembly-CSharp.dll:.item_demo
@@ -203,7 +223,7 @@ dc0c855440d59a516315a62ef55d7fd8 Assembly-CSharp.dll:.CameraFollow
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 375d8e787778d6044a54ecf049a4e148 Assembly-CSharp.dll:.feedback_window
 d620721060666611b6eaba17c79c72ee Assembly-CSharp.dll:.WinScreenSkin
-65f9744a73589aaf09b020e7e4c866ed Assembly-CSharp.dll:.options_menu
+9969a38edbdacfe2823d4429a42d51cb Assembly-CSharp.dll:.options_menu
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.check_if_call_win_or_lose
 85f9e3c9641546863975a3380a295393 Assembly-CSharp.dll:.Slots
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DropPanelSlotRandomizer
@@ -213,20 +233,22 @@ ebd28e8f397f496a3b2984bfcc6db02a Assembly-CSharp.dll:.Spawner
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 c5b7710772aec82f5aef61de1e3c2922 Assembly-CSharp.dll:.score_rank_item
 bce2cb4d15fac1d65403619e1c2d6b82 Assembly-CSharp.dll:.OptionSoundElementSkin
-ed7bdbec0234fc407887b6a23cc1c2e4 Assembly-CSharp.dll:.DragManager
+cf2058b1910089a8bada8f69ab9da7c9 Assembly-CSharp.dll:.DragManager
 73ebe565b6ed96afdc726656162a6281 Assembly-CSharp.dll:.InputFieldSkin
 21fb8c9bff435ae9ca24e6fba4a5ace1 Assembly-CSharp.dll:.scroll_snap
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TimeManager
 1a1f9c7200fa694aad8200c9ab5b8379 Assembly-CSharp.dll:.SceneFader
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PauseObjectExample
 1ba559429977a4eb848fe2b9da71ebc8 Assembly-CSharp.dll:.world_ico_uGUI
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 4c791814a68b5d40c822c39f1f469a45 Assembly-CSharp.dll:.pad_scroll
 53545f6428813f49a872e190803b6210 Assembly-CSharp.dll:.demo_controller
 724ca2085acc45ef8f5eaeb3a2b92b93 Assembly-CSharp.dll:.SkinMaster
-446a000ad8e99f1360b9d37c4c109c50 Assembly-CSharp.dll:.new_profile_window
+de3ec328b1294c59dc1d54b0f69403ee Assembly-CSharp.dll:.new_profile_window
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.LoginButtonHandler
 6f470e88c2d5e9d53758431b5ab5e752 Assembly-CSharp.dll:.LevelButton
 54a18e92429e4098ea34ee9cfdb8f569 Assembly-CSharp.dll:.gift_button
-3f5d61fa581004eeb880c08c11bf0bbe Assembly-CSharp.dll:.manage_menu_uGUI
+e24b9b92bbf6b41b7af0cfaa4d9493c4 Assembly-CSharp.dll:.manage_menu_uGUI
 e3ec4a3752ec09fa0c7e6d4897426054 Assembly-CSharp.dll:.IconSkin
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -272,14 +294,18 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+6164dcc6f18fa564d21324496cc9812f Assembly-CSharp.dll:.BackToMain
 a919cc31e8704742b240d51d0f90c022 Assembly-CSharp.dll:.get_score_points
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ElementCollisionHandler
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DragPanelController
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameValues
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
+7508f1b2ac5f9aa53ef7a9ea6f13e54f Assembly-CSharp.dll:.FormManager
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 227adc40aa4ea2a56383aa804d31f029 Assembly-CSharp.dll:.StageButtonSkin
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.HomeManager
+f1cd2e3cb0cc0e0feb958850715de62d Assembly-CSharp.dll:.HomeManager
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Pause
 abdd3590e1b1c76c6db1ebddc60b2c84 Assembly-CSharp.dll:.store_button
 74fdef42e5d1b91d250d09f9fc6f54da Assembly-CSharp.dll:.Camera2DFollow
 cce46a14f732bc03693a68d3099c7549 Assembly-CSharp.dll:.game_uGUI
@@ -293,6 +319,7 @@ e67294df529a9be2a062655033155706 Assembly-CSharp.dll:.store_manager
 2f5fe18b303d45f937f04c838fb69aa0 Assembly-CSharp.dll:.LoseScreenSkin
 7c891797a480d7e2a1a49592626ad183 Assembly-CSharp.dll:.manage_linear_map
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Initializer
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameMode
 b2e94e3967ee93e51a0393e856edd9f8 Assembly-CSharp.dll:.StarScoreProgressBarSkin
 1ce18fa0880c54d691fdf42520118c5a Assembly-CSharp.dll:.manual_world_screen
 0aef521ff8f9d159651a29397f8ce0fb Assembly-CSharp.dll:.store_tabs
@@ -312,3 +339,9 @@ e528a8e59fe5719b8b1f326fb8007a84 Assembly-CSharp.dll:.DragScore
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ButtonPressPlayer
 edfee1b4d64be2b1fd86b27f5bdb9736 Assembly-CSharp.dll:.PlatformerCharacter2D
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.call_lose
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PrivacyPolicy
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ProfileTextUpdate
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.StatusTextDefault
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SplashScreenController
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.OptionsScreenController
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlayerButtonTextUpdate
