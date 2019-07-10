@@ -9,13 +9,37 @@ public class HomeManager : MonoBehaviour
     public Toggle advanced;
     public GameObject loginScreen;
 
-
-    void Update()
+    // Start is called before the first frame update
+    void Start()
     {
-
+        if (GameObject.FindGameObjectWithTag("AudioManager") != null)
+        {
+            FindObjectOfType<AudioManager>().Play("levelselectnoise");
+        }
+        checkLogin();
     }
 
-    void Awake()
+    public void setBeginnerDifficulty(bool isOn)
+    {
+        if (isOn)
+        {
+            Debug.Log("The diffulculty is beginner");
+            GameValues.diffuclty = GameValues.Difficulties.Beginner;
+            PlayerPrefs.SetInt("Diffilculty", (int)GameValues.Difficulties.Beginner);
+        }
+    }
+
+    public void setAdvancedDifficulty(bool isOn)
+    {
+        if (isOn)
+        {
+            Debug.Log("The diffulculty is advanced");
+            GameValues.diffuclty = GameValues.Difficulties.Advanced;
+            PlayerPrefs.SetInt("Diffilculty", (int)GameValues.Difficulties.Advanced);
+        }
+    }
+
+    public void checkLogin()
     {
         //PlayerPrefs.DeleteAll();
         /*
@@ -63,35 +87,6 @@ public class HomeManager : MonoBehaviour
         else
         {
             Debug.Log("UUID IS ---> " + PlayerPrefs.GetString("ui"));
-        }
-
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (GameObject.FindGameObjectWithTag("AudioManager") != null)
-        {
-            FindObjectOfType<AudioManager>().Play("levelselectnoise");
-        }
-    }
-
-    public void setBeginnerDifficulty(bool isOn)
-    {
-        if (isOn)
-        {
-            Debug.Log("The diffulculty is beginner");
-            GameValues.diffuclty = GameValues.Difficulties.Beginner;
-            PlayerPrefs.SetInt("Diffilculty", (int)GameValues.Difficulties.Beginner);
-        }
-    }
-
-    public void setAdvancedDifficulty(bool isOn)
-    {
-        if (isOn)
-        {
-            Debug.Log("The diffulculty is advanced");
-            GameValues.diffuclty = GameValues.Difficulties.Advanced;
-            PlayerPrefs.SetInt("Diffilculty", (int)GameValues.Difficulties.Advanced);
         }
     }
 }

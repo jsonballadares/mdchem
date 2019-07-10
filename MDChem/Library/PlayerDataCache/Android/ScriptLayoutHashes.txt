@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-/Users/tvvizzlemac/androidbuildtest.apk
+/Users/tvvizzlemac/Downloads/androidbuildtest.apk
 SceneListBegin?
 Assets/Scenes/Menus/Home.unity
 Assets/Scenes/Menus/LevelSelector.unity
@@ -242,10 +242,12 @@ cf2058b1910089a8bada8f69ab9da7c9 Assembly-CSharp.dll:.DragManager
 1ba559429977a4eb848fe2b9da71ebc8 Assembly-CSharp.dll:.world_ico_uGUI
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 4c791814a68b5d40c822c39f1f469a45 Assembly-CSharp.dll:.pad_scroll
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PrivacyPolicy
 53545f6428813f49a872e190803b6210 Assembly-CSharp.dll:.demo_controller
 724ca2085acc45ef8f5eaeb3a2b92b93 Assembly-CSharp.dll:.SkinMaster
 de3ec328b1294c59dc1d54b0f69403ee Assembly-CSharp.dll:.new_profile_window
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.LoginButtonHandler
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ProfileTextUpdate
 6f470e88c2d5e9d53758431b5ab5e752 Assembly-CSharp.dll:.LevelButton
 54a18e92429e4098ea34ee9cfdb8f569 Assembly-CSharp.dll:.gift_button
 e24b9b92bbf6b41b7af0cfaa4d9493c4 Assembly-CSharp.dll:.manage_menu_uGUI
@@ -283,6 +285,7 @@ cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTool
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.TestResultRendererCallback
 1d44ad57ae0e737239881a5d9cc54edc Assembly-CSharp.dll:.ButtonSkin
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.StatusTextDefault
 931f489e44eadf809e9310429c99dde5 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -296,6 +299,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 6164dcc6f18fa564d21324496cc9812f Assembly-CSharp.dll:.BackToMain
 a919cc31e8704742b240d51d0f90c022 Assembly-CSharp.dll:.get_score_points
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SplashScreenController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ElementCollisionHandler
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DragPanelController
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
@@ -317,6 +321,7 @@ e67294df529a9be2a062655033155706 Assembly-CSharp.dll:.store_manager
 5ae2c4f4ecb024890c280b6e4d862090 Assembly-CSharp.dll:.LastLevelManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.take_money
 2f5fe18b303d45f937f04c838fb69aa0 Assembly-CSharp.dll:.LoseScreenSkin
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.OptionsScreenController
 7c891797a480d7e2a1a49592626ad183 Assembly-CSharp.dll:.manage_linear_map
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Initializer
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameMode
@@ -339,9 +344,4 @@ e528a8e59fe5719b8b1f326fb8007a84 Assembly-CSharp.dll:.DragScore
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ButtonPressPlayer
 edfee1b4d64be2b1fd86b27f5bdb9736 Assembly-CSharp.dll:.PlatformerCharacter2D
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.call_lose
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PrivacyPolicy
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ProfileTextUpdate
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.StatusTextDefault
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SplashScreenController
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.OptionsScreenController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlayerButtonTextUpdate
