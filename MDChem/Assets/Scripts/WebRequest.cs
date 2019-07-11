@@ -28,6 +28,8 @@ public class WebRequest : MonoBehaviour
         Debug.Log("POSTCRT IS CALLED");
         WWWForm form = new WWWForm();
 
+
+        //using (UnityWebRequest www = UnityWebRequest.Post("http://68.183.111.180:5000/api/save", form))
         using (UnityWebRequest www = UnityWebRequest.Post("https://www.mdchem.app/api/save", form))
         {
             byte[] rawData = System.Text.Encoding.ASCII.GetBytes(data);
@@ -46,9 +48,9 @@ public class WebRequest : MonoBehaviour
             }
             else
             {
- /*                Element.elementArray.Clear();
-                QuizData.elementArray.Clear();
-                DraggableGameData.elementArray.Clear(); */
+                /*                Element.elementArray.Clear();
+                               QuizData.elementArray.Clear();
+                               DraggableGameData.elementArray.Clear(); */
                 Debug.Log(www.responseCode);
                 Debug.Log(www.ToString());
                 Debug.Log("Post Request Complete!");
@@ -146,7 +148,7 @@ public class WebRequest : MonoBehaviour
         return "{\"data\":[{\"correct\":[" + correct + "]},{\"incorrect\":[" + incorrect + "]},{\"missed\":[" + missed + "]}]}";
     }
 
-    
+
     public string buildJSONDraggable()
     {
         string correct = "", missed = "", incorrect = "";
@@ -183,5 +185,31 @@ public class WebRequest : MonoBehaviour
             incorrect = incorrect.Substring(0, incorrect.Length - 1);
         }
         return "{\"data\":[{\"correct\":[" + correct + "]},{\"incorrect\":[" + incorrect + "]},{\"missed\":[" + missed + "]}]}";
+    }
+
+    public string buildJSONLastLevel()
+    {
+        string attempts = "";
+
+
+        for (int i = 0; i < LastLevelGameData.attemptArray.Count; i++)
+        {
+            if (i == LastLevelGameData.attemptArray.Count - 1)
+            {
+                attempts += "{\"attempt\":\" " + LastLevelGameData.attemptArray[i] + "\", \"duration\":" + 0.ToString() + " }";
+            }
+            else
+            {
+                attempts += "{\"attempt\":\" " + LastLevelGameData.attemptArray[i] + "\", \"duration\":" + 0.ToString() + " },";
+            }
+
+        }
+
+
+        LastLevelGameData.attemptArray.Clear();
+
+
+
+        return "{\"data\":[" + attempts + "]}";
     }
 }

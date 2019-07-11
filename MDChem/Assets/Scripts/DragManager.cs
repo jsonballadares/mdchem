@@ -107,7 +107,8 @@ public class DragManager : MonoBehaviour
         return count == dropPanel.childCount;
     }
 
-        public void ResumeGame () {
+    public void ResumeGame()
+    {
         SumPause.Status = false; // Set pause status to false
     }
 
@@ -154,7 +155,7 @@ public class DragManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("falsenoise");
                 //FindObjectOfType<SceneFader>().FadeTo(SceneManager.GetActiveScene().name);
                 //miscellaneousDialogBoxShow("Nice try but try again!"); see if this is something the professor would want
-                    
+
 
             }
         }
@@ -1969,12 +1970,29 @@ public class DragManager : MonoBehaviour
      */
     private void right()
     {
+        string formula = DropPanelController.currentSpriteName;
+        string attempt = "";
+
+        for (int i = 0; i < dropPanel.childCount; i++)
+        {
+            attempt += dropPanel.GetChild(i).name;
+
+        }
+
+        LastLevelGameData.attemptArray.Add(formula + "," + attempt);
+
+        foreach (string item in LastLevelGameData.attemptArray)
+        {
+            Debug.Log("in the array " + item);
+        }
+
 
         rightCounter++;
         FindObjectOfType<AudioManager>().Play("correctnoise");
         //score 15 to win
-        if (rightCounter >= 15)
+        if (rightCounter >= 1)
         {
+
             //beat the game
             //FindObjectOfType<AudioManager>().Pause("quizgamenoise");
             rightCounter = 0;
@@ -2024,6 +2042,15 @@ public class DragManager : MonoBehaviour
                     endDialog.GetComponent<Text>().text = "CONGRATULATIONS, YOU HAVE MASTERED THE GAME! BUT YOU MAY WANT TO CONTACT A TUTOR.";
                     //see a tutor dialog and 1 star for completion
                 }
+
+                if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                {
+                    Dictionary<string, string> dic = new Dictionary<string, string>();
+                    dic.Add("score", points.ToString());
+                    dic.Add("uuid", PlayerPrefs.GetString("ui"));
+                    dic.Add("levelid", "10");
+                    FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONLastLevel());
+                }
             }
 
 
@@ -2057,6 +2084,20 @@ public class DragManager : MonoBehaviour
      */
     private void wrong()
     {
+        string formula = DropPanelController.currentSpriteName;
+        string attempt = "";
+
+        for (int i = 0; i < dropPanel.childCount; i++)
+        {
+            attempt += dropPanel.GetChild(i).name;
+
+        }
+
+        LastLevelGameData.attemptArray.Add(formula + "," + attempt);
+        foreach (string item in LastLevelGameData.attemptArray)
+        {
+            Debug.Log("in the array " + item);
+        }
         wrongCounter++;
         FindObjectOfType<AudioManager>().Play("falsenoise");
         feedBackDialog.SetActive(true);

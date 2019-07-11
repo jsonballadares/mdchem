@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "953693697576",
+    "firebase_url": "https://mdchemnew.firebaseio.com",
+    "project_id": "mdchemnew",
+    "storage_bucket": "mdchemnew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953693697576:android:011f29afcd80bbae",
+        "android_client_info": {
+          "package_name": "com.mdchem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953693697576-jqam2sfe5lcdcda7dm3jl19oivnlk5pm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcEUdkPJcOPg6eNCCTZ97ZWQLBFi_fqdc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
