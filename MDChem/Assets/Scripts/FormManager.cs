@@ -76,6 +76,12 @@ public class FormManager : MonoBehaviour
         authManager.LogInNewUser(emailInput.text, passwordInput.text);
     }
 
+    public void OnGuestLogin()
+    {
+        Debug.Log("Login Guest");
+        authManager.LogInNewUser("guest@guest.com", "Guestpassword");
+    }
+
     void HandleAuthCallback(Task<Firebase.Auth.FirebaseUser> task, string operation)
     {
         Debug.Log("Beginning HandleAuthCallback()");
@@ -91,7 +97,7 @@ public class FormManager : MonoBehaviour
             if (operation.Equals("sign_up"))
             {
                 Firebase.Auth.FirebaseUser newUser = task.Result;
-                
+
                 disableLoginScreen();
                 emptyInputBox();
 
@@ -105,7 +111,7 @@ public class FormManager : MonoBehaviour
             else if (operation.Equals("login"))
             {
                 Firebase.Auth.FirebaseUser oldUser = task.Result;
-                
+
                 disableLoginScreen();
                 emptyInputBox();
 
