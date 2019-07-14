@@ -12,6 +12,8 @@ public class HomeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("The current user is " + PlayerPrefs.GetString("email"));
+        Debug.Log("The current users uuid is " + PlayerPrefs.GetString("ui"));
         if (GameObject.FindGameObjectWithTag("AudioManager") != null)
         {
             FindObjectOfType<AudioManager>().Play("levelselectnoise");
