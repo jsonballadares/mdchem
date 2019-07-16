@@ -1990,7 +1990,7 @@ public class DragManager : MonoBehaviour
         rightCounter++;
         FindObjectOfType<AudioManager>().Play("correctnoise");
         //score 15 to win
-        if (rightCounter >= 1)
+        if (rightCounter >= 15)
         {
 
             //beat the game
