@@ -153,7 +153,7 @@ public class DragManager : MonoBehaviour
                     FindObjectOfType<QuizCounter>().addToCounter();
                 }
                 FindObjectOfType<AudioManager>().Play("falsenoise");
-                //FindObjectOfType<SceneFader>().FadeTo(SceneManager.GetActiveScene().name);
+                FindObjectOfType<SceneFader>().FadeTo(SceneManager.GetActiveScene().name);
                 //miscellaneousDialogBoxShow("Nice try but try again!"); see if this is something the professor would want
 
 
