@@ -1,34 +1,50 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using FullSerializer;
 using UnityEngine;
 
-public class QuizData
+public class QuestionData
 {
-    public static ArrayList elementArray = new ArrayList();
-    public State state;
-    public enum State { Correct, Incorrect, Missed};
-    private string questionText;
-    private int duration;
+    public string levelID;
+    private static readonly fsSerializer _serializer = new fsSerializer();
+    public int score;
+    public static List<string> correctQuestions = new List<string>();
+    public static List<string> incorrectQuestions = new List<string>();
+    public List<string> correctData;
+    public List<string> incorrectData;
 
-    public QuizData(string questionText,State state,int duration)
+     public QuestionData(string levelID, int score)
     {
-        this.questionText = questionText;
-        this.state = state;
-        this.duration = duration;
+        this.score = score;
+        this.levelID = levelID;
+        incorrectData = incorrectQuestions;
+        correctData = correctQuestions;
+    }
+    /*
+    Returns a student object as a JSON
+     */
+    public string toJSON()
+    {
+        return Serialize(typeof(QuestionData), this);
     }
 
-    public string getQuestionText()
+    /*
+    Method that actually serializes the object. it does all of the heavy lifting using fullserializer
+     */
+    public static string Serialize(Type type, object value)
     {
-        return questionText;
+        // serialize the data
+        fsData data;
+        _serializer.TrySerialize(type, value, out data).AssertSuccessWithoutWarnings();
+        // emit the data via JSON
+        return fsJsonPrinter.CompressedJson(data);
     }
 
-    public int getDuration(){
-        return duration;
-    }
-
-    public override string ToString()
+    public static void clearArrays()
     {
-        return "questionText --> " + questionText + ", duration --> " + duration + ", state --> " + state;
+        correctQuestions.Clear();
+        incorrectQuestions.Clear();
     }
 
 }

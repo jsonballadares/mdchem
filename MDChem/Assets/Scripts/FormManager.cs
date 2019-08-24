@@ -10,8 +10,13 @@ using System.Threading.Tasks;
 
 public class FormManager : MonoBehaviour
 {
+    public TMPro.TMP_InputField loginEmailInput;
+    public TMPro.TMP_InputField loginPasswordInput;
     public TMPro.TMP_InputField emailInput;
     public TMPro.TMP_InputField passwordInput;
+    public TMPro.TMP_InputField securityQuestionInput;
+    public TMPro.TMP_InputField securityQuestionAnswerInput;
+    public TMPro.TMP_InputField classNumberInput;
     public Button signUpButton;
     public Button loginButton;
     public AuthManager authManager;
@@ -20,7 +25,6 @@ public class FormManager : MonoBehaviour
     string message = "Enter your data";
     Boolean clearBoxes = false;
     Boolean disableScreen = false;
-
     Boolean flag = false;
 
     string uuid = "", email = "";
@@ -34,8 +38,14 @@ public class FormManager : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
+        ToggleButtonStates(true);
         statusText.GetComponent<TMPro.TMP_Text>().text = message;
         if (clearBoxes)
         {
@@ -67,13 +77,16 @@ public class FormManager : MonoBehaviour
     public void OnSignUp()
     {
         Debug.Log("Sign Up");
-        authManager.SignUpNewUser(emailInput.text, passwordInput.text);
+        signUpStudent();
+        //authManager.SignUpNewUser(emailInput.text, passwordInput.text);
+
     }
 
     public void OnLogin()
     {
         Debug.Log("Login");
-        authManager.LogInNewUser(emailInput.text, passwordInput.text);
+        loginStudent();
+        //authManager.LogInNewUser(emailInput.text, passwordInput.text);
     }
 
     public void OnGuestLogin()
@@ -84,46 +97,16 @@ public class FormManager : MonoBehaviour
 
     void HandleAuthCallback(Task<Firebase.Auth.FirebaseUser> task, string operation)
     {
-        Debug.Log("Beginning HandleAuthCallback()");
-        if (task.IsCanceled || task.IsFaulted)
+        if (operation.Equals("sign_up"))
         {
-            Debug.Log("Sorry there was an error creating your new account try again.");
-            UpdateStatus("Sorry there was an error creating your new account try again.");
-            emptyInputBox();
-            return;
-        }
-        else if (task.IsCompleted)
-        {
-            if (operation.Equals("sign_up"))
-            {
-                Firebase.Auth.FirebaseUser newUser = task.Result;
-
-                disableLoginScreen();
-                emptyInputBox();
-
-                Debug.Log("Welcome to MDChem " + newUser.Email + " w/UUID: " + newUser.UserId);
-                Debug.Log("Firebase user created successfully: " + newUser.Email + " w/UUID: " + newUser.UserId);
-                UpdateStatus("Firebase user created successfully: " + newUser.Email + " w/UUID: " + newUser.UserId);
-                uuid = newUser.UserId;
-                email = newUser.Email;
-                setPlayerPrefs();
-            }
-            else if (operation.Equals("login"))
-            {
-                Firebase.Auth.FirebaseUser oldUser = task.Result;
-
-                disableLoginScreen();
-                emptyInputBox();
-
-                Debug.Log("Welcome back to MDChem " + oldUser.Email + " w/UUID: " + oldUser.UserId);
-                UpdateStatus("Welcome back to MDChem " + oldUser.Email + " w/UUID: " + oldUser.UserId);
-                uuid = oldUser.UserId;
-                email = oldUser.Email;
-                setPlayerPrefs();
-            }
+            Debug.Log("Signing UP");
 
         }
-        Debug.Log("Ending HandleAuthCallback()");
+        else if (operation.Equals("login"))
+        {
+
+        }
+
     }
 
     void OnDestroy()
@@ -142,11 +125,11 @@ public class FormManager : MonoBehaviour
         string password = passwordInput.text;
         if (password != null && emailInput.text != null && password.Length >= 6)
         {
-            ToggleButtonStates(true);
+           // ToggleButtonStates(true);
         }
         else
         {
-            ToggleButtonStates(false);
+            //ToggleButtonStates(false);
         }
     }
     public void ValidateEmail()
@@ -160,11 +143,11 @@ public class FormManager : MonoBehaviour
 
         if (email != "" && Regex.IsMatch(email, regexPattern) && passwordInput.text.Length >= 6)
         {
-            ToggleButtonStates(true);
+           // ToggleButtonStates(true);
         }
         else
         {
-            ToggleButtonStates(false);
+           // ToggleButtonStates(false);
         }
     }
     private void ToggleButtonStates(bool toState)
@@ -184,5 +167,25 @@ public class FormManager : MonoBehaviour
     public void disableLoginScreen()
     {
         disableScreen = true;
+    }
+
+    public void signUpStudent()
+    {
+        // Debug.Log("email -> " + emailInput.text);
+        // Debug.Log("password -> " + passwordInput.text);
+        // Debug.Log("security question -> " + securityQuestionInput.text);
+        // Debug.Log("security question answer -> " + securityQuestionAnswerInput.text);
+        // Debug.Log("class number -> " + classNumberInput.text);
+        Student student = new Student(emailInput.text, passwordInput.text, securityQuestionInput.text, securityQuestionAnswerInput.text, Int32.Parse(classNumberInput.text));
+        Debug.Log(student.toJSON());
+        StartCoroutine(WebRequestManager.register(Enviorment.URL + "/api/auth/register/student", student.toJSON()));
+    }
+
+    public void loginStudent()
+    {
+        //Student student = new Student(emailInput.text, passwordInput.text);
+        Student student = new Student("jball070@fiu.edu", "Jason1337");
+        Debug.Log(student.toJSON());
+        StartCoroutine(WebRequestManager.login(Enviorment.URL + "/api/auth/login/student", student.toJSON()));
     }
 }

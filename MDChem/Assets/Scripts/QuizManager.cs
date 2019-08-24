@@ -48,8 +48,6 @@ public class QuizManager : MonoBehaviour
 
 
 
-
-
     void Start()
     {
         questionArraySize = questions.Length;
@@ -90,7 +88,7 @@ public class QuizManager : MonoBehaviour
             unansweredQuestions = questions.ToList<Question>();
         }
         //score 15
-        if (score >= 15)
+        if (score >= 3)
         {
             QuizManager.clearQuestionsList();
             win();
@@ -106,10 +104,11 @@ public class QuizManager : MonoBehaviour
             Debug.Log("unanswered question fact at " + i + " " + unansweredQuestions[i].fact);
         }
 
-        if(unansweredQuestions.Count > 0){
+        if (unansweredQuestions.Count > 0)
+        {
             SetCurrentQuestion();
         }
-        
+
 
     }
 
@@ -160,9 +159,8 @@ public class QuizManager : MonoBehaviour
 
         if (currentQuestion.isTrue)
         {
-            QuizData q = new QuizData(currentQuestion.fact, QuizData.State.Correct, (int)TimeManager.timeThreshhold);
-            Debug.Log("THE CURRENT QUESITON IS ---> " + q.ToString());
-            QuizData.elementArray.Add(q);
+            QuestionData.correctQuestions.Add(currentQuestion.fact);
+            Debug.Log("THE CURRENT QUESITON IS ---> " + currentQuestion.fact);
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
                 FindObjectOfType<AudioManager>().Play("truenoise");
@@ -174,9 +172,9 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-            QuizData q = new QuizData(currentQuestion.fact, QuizData.State.Incorrect, (int)TimeManager.timeThreshhold);
-            Debug.Log("THE CURRENT QUESITON IS ---> " + q.ToString());
-            QuizData.elementArray.Add(q);
+            QuestionData.incorrectQuestions.Add(currentQuestion.fact);
+            Debug.Log("THE CURRENT QUESITON IS ---> " + currentQuestion.fact);
+
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
                 FindObjectOfType<AudioManager>().Play("falsenoise");
@@ -194,9 +192,8 @@ public class QuizManager : MonoBehaviour
 
         if (!currentQuestion.isTrue)
         {
-            QuizData q = new QuizData(currentQuestion.fact, QuizData.State.Correct, (int)TimeManager.timeThreshhold);
-            Debug.Log("THE CURRENT QUESITON IS ---> " + q.ToString());
-            QuizData.elementArray.Add(q);
+            QuestionData.correctQuestions.Add(currentQuestion.fact);
+            Debug.Log("THE CURRENT QUESITON IS ---> " + currentQuestion.fact);
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
                 FindObjectOfType<AudioManager>().Play("truenoise");
@@ -207,17 +204,14 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-            QuizData q = new QuizData(currentQuestion.fact, QuizData.State.Incorrect, (int)TimeManager.timeThreshhold);
-            Debug.Log("THE CURRENT QUESITON IS ---> " + q.ToString());
-            QuizData.elementArray.Add(q);
+            QuestionData.incorrectQuestions.Add(currentQuestion.fact);
+            Debug.Log("THE CURRENT QUESITON IS ---> " + currentQuestion.fact);
             if (GameObject.FindGameObjectWithTag("AudioManager") != null)
             {
                 FindObjectOfType<AudioManager>().Play("falsenoise");
             }
-
             numWrong += 1;
             disableButtons();
-
         }
         TimeManager.timeThreshhold = 9.5f;
         StartCoroutine(TrasnsitionToNextQuestionFalse());
@@ -225,7 +219,6 @@ public class QuizManager : MonoBehaviour
 
     public void win()
     {
-
         int points = 0;
         if (SceneManager.GetActiveScene().name.Equals("Level5"))
         {
@@ -237,7 +230,7 @@ public class QuizManager : MonoBehaviour
                 {
 
                     //3stars
-                    if(numWrong == 0)
+                    if (numWrong == 0)
                     {
                         if (AchievementManager.THIS)
                         {
@@ -268,15 +261,24 @@ public class QuizManager : MonoBehaviour
                         PlayerPrefs.SetInt("Level5_score", points);
                     }
                 }
-                if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                {
-                    Dictionary<string, string> d = new Dictionary<string, string>();
-                    d.Add("score", points.ToString());
-                    d.Add("uuid", PlayerPrefs.GetString("ui"));
-                    d.Add("levelid", "5");
-                    FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSONQuiz());
 
-                }
+                // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                // {
+                //     Dictionary<string, string> d = new Dictionary<string, string>();
+                //     d.Add("score", points.ToString());
+                //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+                //     d.Add("levelid", "5");
+                //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSONQuiz());
+
+                // }
+
+                Debug.Log("question data is being SENT ------------");
+                QuestionData d = new QuestionData("5", points);
+                Debug.Log("DA JSON -----> " + d.toJSON());
+                StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                QuestionData.clearArrays();
+                Debug.Log("question data is being SENT ------------");
+
                 FindObjectOfType<QuizCounter>().Destroy();
 
             }
@@ -302,7 +304,7 @@ public class QuizManager : MonoBehaviour
                 Debug.Log("THE COUNT IS ----> " + FindObjectOfType<QuizCounter>().getCount());
                 if (FindObjectOfType<QuizCounter>().getCount() <= 0)
                 {
-                    if(numWrong == 0)
+                    if (numWrong == 0)
                     {
                         if (AchievementManager.THIS)
                         {
@@ -336,15 +338,18 @@ public class QuizManager : MonoBehaviour
                         PlayerPrefs.SetInt("Level8_score", points);
                     }
                 }
-                if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                {
-                    Dictionary<string, string> d = new Dictionary<string, string>();
-                    d.Add("score", points.ToString());
-                    d.Add("uuid", PlayerPrefs.GetString("ui"));
-                    d.Add("levelid", "8");
-                    FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSONQuiz());
+                QuestionData d = new QuestionData("8", points);
+                StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                Drag.clearArrays();
+                // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                // {
+                //     Dictionary<string, string> d = new Dictionary<string, string>();
+                //     d.Add("score", points.ToString());
+                //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+                //     d.Add("levelid", "8");
+                //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSONQuiz());
 
-                }
+                // }
 
                 FindObjectOfType<QuizCounter>().Destroy();
             }

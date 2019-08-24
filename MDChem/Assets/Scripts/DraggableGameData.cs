@@ -13,14 +13,12 @@ public class DraggableGameData
     {
         this.elements = elements;
         this.state = state;
-       
     }
 
     public string getElements()
     {
         return elements;
     }
-
 
     public State getState()
     {

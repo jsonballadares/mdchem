@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LastLevelGameData
 {
-    public static ArrayList attemptArray = new ArrayList();
+    public static List<string> attemptArray = new List<string>();
     public static string formula;
 
 

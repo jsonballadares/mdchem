@@ -57,6 +57,7 @@ TagManager:
   - 5A
   - 6A
   - miscDialog
+  - SignUpScreen
   layers:
   - Default
   - TransparentFX

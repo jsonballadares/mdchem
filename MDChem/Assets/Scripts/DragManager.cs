@@ -22,6 +22,13 @@ public class DragManager : MonoBehaviour
             dragPanel.gameObject.SetActive(true);
         }
     }
+
+    void Start()
+    {
+        // Drag d = new Drag("1b",999);
+        // Debug.Log("DA JSON -> " + d.toJSON());
+        // StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+    }
     private bool doesNameMatch()
     {
 
@@ -128,8 +135,14 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+
+                Drag.correctDataStatic.Add("AlkaliMetals=" + elements);
+                // for (int i = 0; i < Drag.correctData.Count; i++)
+                // {
+                //     Debug.Log(Drag.correctData[i]);
+                // }
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //transition player to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel1b");
@@ -146,8 +159,13 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("AlkaliMetals=" + elements);
+                // for (int i = 0; i < Drag.incorrectData.Count; i++)
+                // {
+                //     Debug.Log(Drag.incorrectData[i]);
+                // }
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -172,8 +190,13 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("AlkaliMetals=" + elements);
+                // for (int i = 0; i < Drag.correctData.Count; i++)
+                // {
+                //     Debug.Log(Drag.correctData[i]);
+                // }
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //if all is correct move to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel1c");
@@ -190,8 +213,13 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("AlkaliMetals=" + elements);
+                // for (int i = 0; i < Drag.incorrectData.Count; i++)
+                // {
+                //     Debug.Log(Drag.incorrectData[i]);
+                // }
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -214,8 +242,13 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("AlkalineMetals=" + elements);
+                // for (int i = 0; i < Drag.correctData.Count; i++)
+                // {
+                //     Debug.Log(Drag.correctData[i]);
+                // }
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //transition player to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel1d");
@@ -232,8 +265,13 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("AlkalineMetals=" + elements);
+                // for (int i = 0; i < Drag.incorrectData.Count; i++)
+                // {
+                //     Debug.Log(Drag.incorrectData[i]);
+                // }
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -291,16 +329,24 @@ public class DragManager : MonoBehaviour
                     {
                         elements += dropPanel.GetChild(i).GetChild(0).name;
                     }
-                    DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                    DraggableGameData.elementArray.Add(d);
-                    if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                    {
-                        Dictionary<string, string> dic = new Dictionary<string, string>();
-                        dic.Add("score", points.ToString());
-                        dic.Add("uuid", PlayerPrefs.GetString("ui"));
-                        dic.Add("levelid", "B1"); //should we distinguish between advanced and beginner??? //B1 COULD BE HOW ASK EARL
-                        FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
-                    }
+                    Drag.correctDataStatic.Add("AlkalineMetals=" + elements);
+                    Drag d = new Drag("1b", points);
+                    StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                    Drag.clearArrays();
+                    // for (int i = 0; i < Drag.correctData.Count; i++)
+                    // {
+                    //    Debug.Log(Drag.correctData[i]);
+                    //  }
+                    // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                    // DraggableGameData.elementArray.Add(d);
+
+                    //if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                    //{
+                    //Drag d = new Drag();
+                    //Drag.score = points;
+                    //Debug.Log("DA JSON -> " + d.toJSON());
+                    // WebRequestManager.sendData("1b", Enviorment.URL + "/api/player/", d.toJSON());
+                    //}
                 }
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 endDialog.SetActive(true);
@@ -317,8 +363,13 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("AlkalineMetals=" + elements);
+                // for (int i = 0; i < Drag.incorrectData.Count; i++)
+                // {
+                //     Debug.Log(Drag.incorrectData[i]);
+                // }
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -342,8 +393,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("Halogens=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //transition player to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel2b");
@@ -360,8 +412,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("Halogens=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -384,8 +437,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("Halogens=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //if all is correct move to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel2c");
@@ -402,8 +456,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("Halogens=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -426,8 +481,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("NobleGases=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //transition player to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel2d");
@@ -444,8 +500,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("NobleGases=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -504,16 +561,10 @@ public class DragManager : MonoBehaviour
                     {
                         elements += dropPanel.GetChild(i).GetChild(0).name;
                     }
-                    DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                    DraggableGameData.elementArray.Add(d);
-                    if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                    {
-                        Dictionary<string, string> dic = new Dictionary<string, string>();
-                        dic.Add("score", points.ToString());
-                        dic.Add("uuid", PlayerPrefs.GetString("ui"));
-                        dic.Add("levelid", "B2");
-                        FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
-                    }
+                    Drag.correctDataStatic.Add("NobleGases=" + elements);
+                    Drag d = new Drag("2b", points);
+                    StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                    Drag.clearArrays();
                 }
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 endDialog.SetActive(true);
@@ -524,14 +575,15 @@ public class DragManager : MonoBehaviour
                 BUILD THE WHATS IN THE DROP PANELS CHILDREN CONCAT TOGETHER
                 PUT IN INCORRECT 
                  */
-                //send data to server about incorrect try
+                //send data to server about incorrect tryd
                 string elements = "";
                 for (int i = 0; i < dropPanel.childCount; i++)
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("NobleGases=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -554,8 +606,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("TransitionMetals=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //transition player to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel3b");
@@ -572,8 +625,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("TransitionMetals=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -596,8 +650,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("TransitionMetals=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //if all is correct move to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel3c");
@@ -614,8 +669,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("TransitionMetals=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -638,8 +694,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("Metalloids=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //transition player to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel3d");
@@ -656,8 +713,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("Metalloids=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -716,16 +774,20 @@ public class DragManager : MonoBehaviour
                     {
                         elements += dropPanel.GetChild(i).GetChild(0).name;
                     }
-                    DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                    DraggableGameData.elementArray.Add(d);
-                    if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                    {
-                        Dictionary<string, string> dic = new Dictionary<string, string>();
-                        dic.Add("score", points.ToString());
-                        dic.Add("uuid", PlayerPrefs.GetString("ui"));
-                        dic.Add("levelid", "B3");
-                        FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
-                    }
+                    Drag.correctDataStatic.Add("Metalloids=" + elements);
+                    Drag d = new Drag("3b", points);
+                    StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                    Drag.clearArrays();
+                    // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                    // DraggableGameData.elementArray.Add(d);
+                    // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                    // {
+                    //     Dictionary<string, string> dic = new Dictionary<string, string>();
+                    //     dic.Add("score", points.ToString());
+                    //     dic.Add("uuid", PlayerPrefs.GetString("ui"));
+                    //     dic.Add("levelid", "B3");
+                    //     FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
+                    // }
                 }
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 endDialog.SetActive(true);
@@ -742,8 +804,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("Metalloids=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -766,8 +829,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("5A=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //transition player to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel4b");
@@ -784,8 +848,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("5A=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -808,8 +873,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("5A=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //if all is correct move to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel4c");
@@ -826,8 +892,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("5A=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -850,8 +917,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("6A=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 //transition player to next level
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("BeginnerLevel4d");
@@ -868,8 +936,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("6A=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -914,7 +983,6 @@ public class DragManager : MonoBehaviour
                     }
                     else
                     {
-
                         //1star
                         points = 300;
                         if (PlayerPrefs.GetInt("Level4_score") < points)
@@ -928,16 +996,20 @@ public class DragManager : MonoBehaviour
                     {
                         elements += dropPanel.GetChild(i).GetChild(0).name;
                     }
-                    DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                    DraggableGameData.elementArray.Add(d);
-                    if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                    {
-                        Dictionary<string, string> dic = new Dictionary<string, string>();
-                        dic.Add("score", points.ToString());
-                        dic.Add("uuid", PlayerPrefs.GetString("ui"));
-                        dic.Add("levelid", "B4");
-                        FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
-                    }
+                    Drag.correctDataStatic.Add("6A=" + elements);
+                    Drag d = new Drag("4b", points);
+                    StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                    Drag.clearArrays();
+                    // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                    // DraggableGameData.elementArray.Add(d);
+                    // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                    // {
+                    //     Dictionary<string, string> dic = new Dictionary<string, string>();
+                    //     dic.Add("score", points.ToString());
+                    //     dic.Add("uuid", PlayerPrefs.GetString("ui"));
+                    //     dic.Add("levelid", "B4");
+                    //     FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
+                    // }
                 }
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 endDialog.SetActive(true);
@@ -954,8 +1026,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("6A=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -975,8 +1048,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("+1=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("Level6b");
             }
@@ -991,8 +1065,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("+1=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -1050,16 +1125,20 @@ public class DragManager : MonoBehaviour
                     {
                         elements += dropPanel.GetChild(i).GetChild(0).name;
                     }
-                    DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                    DraggableGameData.elementArray.Add(d);
-                    if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                    {
-                        Dictionary<string, string> dic = new Dictionary<string, string>();
-                        dic.Add("score", points.ToString());
-                        dic.Add("uuid", PlayerPrefs.GetString("ui"));
-                        dic.Add("levelid", "6");
-                        FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
-                    }
+                    Drag.correctDataStatic.Add("+2=" + elements);
+                    Drag d = new Drag("6", points);
+                    StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                    Drag.clearArrays();
+                    // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                    // DraggableGameData.elementArray.Add(d);
+                    // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                    // {
+                    //     Dictionary<string, string> dic = new Dictionary<string, string>();
+                    //     dic.Add("score", points.ToString());
+                    //     dic.Add("uuid", PlayerPrefs.GetString("ui"));
+                    //     dic.Add("levelid", "6");
+                    //     FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
+                    // }
                 }
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 endDialog.SetActive(true);
@@ -1071,8 +1150,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("+2=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -1090,8 +1170,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("-1=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("Level7b");
 
@@ -1103,8 +1184,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("-1=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -1122,8 +1204,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                DraggableGameData.elementArray.Add(d);
+                Drag.correctDataStatic.Add("-2=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                // DraggableGameData.elementArray.Add(d);
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("Level7c");
             }
@@ -1134,8 +1217,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("-2=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -1185,16 +1269,20 @@ public class DragManager : MonoBehaviour
                     {
                         elements += dropPanel.GetChild(i).GetChild(0).name;
                     }
-                    DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                    DraggableGameData.elementArray.Add(d);
-                    if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                    {
-                        Dictionary<string, string> dic = new Dictionary<string, string>();
-                        dic.Add("score", points.ToString());
-                        dic.Add("uuid", PlayerPrefs.GetString("ui"));
-                        dic.Add("levelid", "7");
-                        FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
-                    }
+                    Drag.correctDataStatic.Add("-3=" + elements);
+                    Drag d = new Drag("7", points);
+                    StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                    Drag.clearArrays();
+                    // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                    // DraggableGameData.elementArray.Add(d);
+                    // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                    // {
+                    //     Dictionary<string, string> dic = new Dictionary<string, string>();
+                    //     dic.Add("score", points.ToString());
+                    //     dic.Add("uuid", PlayerPrefs.GetString("ui"));
+                    //     dic.Add("levelid", "7");
+                    //     FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
+                    // }
                 }
 
                 FindObjectOfType<AudioManager>().Play("truenoise");
@@ -1207,8 +1295,9 @@ public class DragManager : MonoBehaviour
                 {
                     elements += dropPanel.GetChild(i).GetChild(0).name;
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                Drag.incorrectDataStatic.Add("-3=" + elements);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -1222,14 +1311,20 @@ public class DragManager : MonoBehaviour
 
             if (doesNameMatch())
             {
-
+                for (int i = 0; i < dropPanel.childCount; i++)
+                {
+                    Drag.correctDataStatic.Add(dropPanel.GetChild(i).name + "=" + dropPanel.GetChild(i).GetChild(0).name);
+                }
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("Level9b");
 
             }
             else
             {
-
+                for (int i = 0; i < dropPanel.childCount; i++)
+                {
+                    Drag.incorrectDataStatic.Add(dropPanel.GetChild(i).name + "=" + dropPanel.GetChild(i).GetChild(0).name);
+                }
                 FindObjectOfType<AudioManager>().Play("falsenoise");
                 FindObjectOfType<SceneFader>().FadeTo(SceneManager.GetActiveScene().name);
             }
@@ -1239,12 +1334,24 @@ public class DragManager : MonoBehaviour
         {
             if (doesNameMatch())
             {
+
+                for (int i = 0; i < dropPanel.childCount; i++)
+                {
+                    Drag.correctDataStatic.Add(dropPanel.GetChild(i).name + "=" + dropPanel.GetChild(i).GetChild(0).name);
+                }
+
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 FindObjectOfType<SceneFader>().FadeTo("Level9c");
                 //endDialog.SetActive(true);
             }
             else
             {
+
+                for (int i = 0; i < dropPanel.childCount; i++)
+                {
+                    Drag.incorrectDataStatic.Add(dropPanel.GetChild(i).name + "=" + dropPanel.GetChild(i).GetChild(0).name);
+                }
+
                 FindObjectOfType<AudioManager>().Play("falsenoise");
                 FindObjectOfType<SceneFader>().FadeTo(SceneManager.GetActiveScene().name);
             }
@@ -1286,34 +1393,35 @@ public class DragManager : MonoBehaviour
                         }
                     }
 
-                    string elements = "";
                     for (int i = 0; i < dropPanel.childCount; i++)
                     {
-                        elements += dropPanel.GetChild(i).name + dropPanel.GetChild(i).GetChild(0).name;
+                        Drag.correctDataStatic.Add(dropPanel.GetChild(i).name + "=" + dropPanel.GetChild(i).GetChild(0).name);
                     }
-                    DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
-                    DraggableGameData.elementArray.Add(d);
-                    if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                    {
-                        Dictionary<string, string> dic = new Dictionary<string, string>();
-                        dic.Add("score", points.ToString());
-                        dic.Add("uuid", PlayerPrefs.GetString("ui"));
-                        dic.Add("levelid", "9");
-                        FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
-                    }
+                    Drag d = new Drag("9", points);
+                    StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+                    Drag.clearArrays();
+                    // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Correct);
+                    // DraggableGameData.elementArray.Add(d);
+                    // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                    // {
+                    //     Dictionary<string, string> dic = new Dictionary<string, string>();
+                    //     dic.Add("score", points.ToString());
+                    //     dic.Add("uuid", PlayerPrefs.GetString("ui"));
+                    //     dic.Add("levelid", "9");
+                    //     FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONDraggable());
+                    // }
                 }
                 FindObjectOfType<AudioManager>().Play("truenoise");
                 endDialog.SetActive(true);
             }
             else
             {
-                string elements = "";
                 for (int i = 0; i < dropPanel.childCount; i++)
                 {
-                    elements += dropPanel.GetChild(i).name + dropPanel.GetChild(i).GetChild(0).name;
+                    Drag.incorrectDataStatic.Add(dropPanel.GetChild(i).name + "=" + dropPanel.GetChild(i).GetChild(0).name);
                 }
-                DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
-                DraggableGameData.elementArray.Add(d);
+                // DraggableGameData d = new DraggableGameData(elements, DraggableGameData.State.Incorrect);
+                // DraggableGameData.elementArray.Add(d);
                 if (GameObject.FindGameObjectWithTag("QuizCounter") != null)
                 {
                     FindObjectOfType<QuizCounter>().addToCounter();
@@ -2043,14 +2151,18 @@ public class DragManager : MonoBehaviour
                     //see a tutor dialog and 1 star for completion
                 }
 
-                if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-                {
-                    Dictionary<string, string> dic = new Dictionary<string, string>();
-                    dic.Add("score", points.ToString());
-                    dic.Add("uuid", PlayerPrefs.GetString("ui"));
-                    dic.Add("levelid", "10");
-                    FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONLastLevel());
-                }
+                Drag.incorrectDataStatic = LastLevelGameData.attemptArray;
+                Drag d = new Drag("10", points);
+                StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+
+                // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+                // {
+                //     Dictionary<string, string> dic = new Dictionary<string, string>();
+                //     dic.Add("score", points.ToString());
+                //     dic.Add("uuid", PlayerPrefs.GetString("ui"));
+                //     dic.Add("levelid", "10");
+                //     FindObjectOfType<WebRequest>().PostData(dic, FindObjectOfType<WebRequest>().buildJSONLastLevel());
+                // }
             }
 
 
