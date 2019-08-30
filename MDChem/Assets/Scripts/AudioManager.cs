@@ -42,9 +42,11 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return; //return to stop execution
         }
-        /* now that we have only one singleton object of the audio manager */
 
+        /* now that we have only one singleton object of the audio manager */
         DontDestroyOnLoad(gameObject);
+
+        /* initializes the Sound objects in the array sounds */
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -57,18 +59,31 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        /*
+        Checks if the playerprefs has the key called music/sfx
+        if it does this mean it has been set to something besides default
+        so we set it to whatever value it has been changed to by the user
+         */
+
         if (PlayerPrefs.HasKey("music"))
         {
             this.changeAudioLevelMusic(PlayerPrefs.GetFloat("music"));
         }
+
         if (PlayerPrefs.HasKey("sfx"))
         {
             this.changeAudioLevelSFX(PlayerPrefs.GetFloat("sfx"));
         }
-
     }
+
+    /*
+    Plays whatever string is passed into the name parameter
+     */
     public void Play(string name)
     {
+        /* assign s to whatever is passed into the name parameter if it exists 
+        in the sounds array and play it if not just break (s will be null) */
+
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
@@ -78,8 +93,14 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    /*
+    Pauses whatever string is passed into the name parameter 
+     */
     public void Pause(string name)
     {
+        /* assign s to whatever is passed into the name parameter if it exists 
+        in the sounds and play it if not just break (s will be null) */
+
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
@@ -89,8 +110,14 @@ public class AudioManager : MonoBehaviour
         s.source.Pause();
     }
 
+    /*
+    Stops whatever string is passed into the name parameter 
+     */
     public void Stop(string name)
     {
+        /* assign s to whatever is passed into the name parameter if it exists 
+        in the sounds and play it if not just break (s will be null) */
+
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
@@ -100,8 +127,14 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
+    /*
+    Stops all audio from playing
+     */
     public void StopAllAudio()
     {
+        /*
+        get all objects that can be stopped and iterate for each one and stop them
+         */
         allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
         foreach (AudioSource audioS in allAudioSources)
         {
@@ -109,9 +142,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /*
+    Changes the audio level specifically for the music in the game to 
+    the desired float parameter
+     */
     public void changeAudioLevelMusic(float level)
     {
-        Debug.Log("CHANGING THE MUSIC AUDIO LEVEL");
+        /*
+        iterate through every sound object in the sounds array 
+        and if the tag for that object is music change its 
+        sound level to match that of the parameter
+         */
+         Debug.Log("CHANGING THE MUSIC AUDIO LEVEL");
         foreach (Sound s in sounds)
         {
             if (s.tag.Equals("music"))
@@ -122,8 +164,17 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /*
+    Changes the audio level specifically for the SFX in the game to 
+    the desired float parameter
+     */
     public void changeAudioLevelSFX(float level)
     {
+        /*
+        iterate through every sound object in the sounds array 
+        and if the tag for that object is music change its 
+        sound level to match that of the parameter
+        */
         Debug.Log("CHANGING THE SFX AUDIO LEVEL");
         foreach (Sound s in sounds)
         {
@@ -134,6 +185,4 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-
-
 }
