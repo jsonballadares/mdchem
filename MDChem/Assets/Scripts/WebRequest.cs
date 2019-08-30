@@ -192,21 +192,21 @@ public class WebRequest : MonoBehaviour
         string attempts = "";
 
 
-        for (int i = 0; i < LastLevelGameData.attemptArray.Count; i++)
-        {
-            if (i == LastLevelGameData.attemptArray.Count - 1)
-            {
-                attempts += "{\"attempt\":\" " + LastLevelGameData.attemptArray[i] + "\", \"duration\":" + 0.ToString() + " }";
-            }
-            else
-            {
-                attempts += "{\"attempt\":\" " + LastLevelGameData.attemptArray[i] + "\", \"duration\":" + 0.ToString() + " },";
-            }
+        // for (int i = 0; i < LastLevelGameData.attemptArray.Count; i++)
+        // {
+        //     if (i == LastLevelGameData.attemptArray.Count - 1)
+        //     {
+        //         attempts += "{\"attempt\":\" " + LastLevelGameData.attemptArray[i] + "\", \"duration\":" + 0.ToString() + " }";
+        //     }
+        //     else
+        //     {
+        //         attempts += "{\"attempt\":\" " + LastLevelGameData.attemptArray[i] + "\", \"duration\":" + 0.ToString() + " },";
+        //     }
 
-        }
+        // }
 
 
-        LastLevelGameData.attemptArray.Clear();
+        // LastLevelGameData.attemptArray.Clear();
 
 
 

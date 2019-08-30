@@ -32,14 +32,14 @@ public class ElementCollisionHandler : MonoBehaviour, IBeginDragHandler
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {   
+    {
         rb.Sleep();
         var box = other.gameObject;
         var element = gameObject;
 
         if (CorrectAnswer(box))
         {
-            
+
             image.color = Color.green;
             Die();
 
@@ -56,32 +56,25 @@ public class ElementCollisionHandler : MonoBehaviour, IBeginDragHandler
                 Score.scoreValue += 10;
                 FindObjectOfType<AudioManager>().Play("correctnoise");
             }
+            Debug.Log("THE NAME OF THE BOX IS -----> " + box.name);
+            Drag.correctDataStatic.Add(box.name + "=" + element.name.Replace("(Clone)", ""));
 
-            Element e = new Element(element.name.Replace("(Clone)",""), Math.Abs(duration.Milliseconds), Element.State.Correct);
-            Element.elementArray.Add(e);
-            Debug.Log("element name --> " + e.getName() + " element duration --> " + e.getDuration() + " element state --> " + e.getState());
         }
         else if (box.CompareTag("BottomBoxCollider"))
         {
-            TimeSpan duration = endInteraction.Subtract(beginInteraction);
-            Element e = new Element(element.name.Replace("(Clone)",""), Math.Abs(duration.Milliseconds), Element.State.Missed);
-            Element.elementArray.Add(e);
-            Debug.Log("element name --> " + e.getName() + " element duration --> " + e.getDuration() + " element state --> " + e.getState());
             Destroy(element);
             FindObjectOfType<AudioManager>().Play("destroy");
 
         }
         else
         {
-            TimeSpan duration = endInteraction.Subtract(beginInteraction);
-            Element e = new Element(element.name.Replace("(Clone)",""), Math.Abs(duration.Milliseconds), Element.State.Incorrect);
-            Element.elementArray.Add(e);
-            Debug.Log("element name --> " + e.getName() + " element duration --> " + e.getDuration() + " element state --> " + e.getState());
+            Debug.Log("THE NAME OF THE BOX IS -----> " + box.name);
+            Drag.incorrectDataStatic.Add(box.name + "=" + element.name.Replace("(Clone)", ""));
             FindObjectOfType<AudioManager>().Play("wrongnoise");
             image.color = Color.red;
             Die();
             Score.scoreValue -= 10;
-            
+
         }
 
 

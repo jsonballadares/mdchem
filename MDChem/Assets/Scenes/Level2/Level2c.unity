@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 142559431}
   - component: {fileID: 142559430}
   m_Layer: 5
-  m_Name: RightRectangleTrigger
+  m_Name: NobleGases
   m_TagString: RightBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2036,7 +2036,7 @@ GameObject:
   - component: {fileID: 1571076015}
   - component: {fileID: 1571076014}
   m_Layer: 5
-  m_Name: LeftRectangleTrigger
+  m_Name: Halogens
   m_TagString: LeftBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

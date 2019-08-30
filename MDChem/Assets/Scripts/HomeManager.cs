@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class HomeManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class HomeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //UnityWebRequest.ClearCookieCache();
         Debug.Log("The current user is " + PlayerPrefs.GetString("email"));
         Debug.Log("The current users uuid is " + PlayerPrefs.GetString("ui"));
         if (GameObject.FindGameObjectWithTag("AudioManager") != null)
@@ -19,6 +22,7 @@ public class HomeManager : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("levelselectnoise");
         }
         checkLogin();
+        checkTokenStatus();
     }
 
     public void setBeginnerDifficulty(bool isOn)
@@ -91,4 +95,26 @@ public class HomeManager : MonoBehaviour
             Debug.Log("UUID IS ---> " + PlayerPrefs.GetString("ui"));
         }
     }
+
+
+    public void checkTokenStatus()
+    {
+        StartCoroutine(WebRequestManager.tokenCheck(Enviorment.URL + "/api/auth/ping", (myReturnValue) =>
+        {
+            if (myReturnValue)
+            {
+                //dont bring up the login screen
+                Debug.Log("The token isnt expired therefore no need to login so dont bring the screen up");
+                loginScreen.SetActive(false);
+            }
+            else
+            {
+                //bring up the login screen
+                Debug.Log("The token is expired therefore we need to bring up the login so they can renew it");
+                loginScreen.SetActive(true);
+            }
+        }));
+        //StartCoroutine(WebRequestManager.tokenCheck(Enviorment.URL + "/api/auth/ping"));
+    }
+
 }

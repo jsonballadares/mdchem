@@ -184,7 +184,7 @@ public class FormManager : MonoBehaviour
     public void loginStudent()
     {
         //Student student = new Student(emailInput.text, passwordInput.text);
-        Student student = new Student("jball070@fiu.edu", "Jason1337");
+        Student student = new Student("jackson@gmail.com", "Jason1337");
         Debug.Log(student.toJSON());
         StartCoroutine(WebRequestManager.login(Enviorment.URL + "/api/auth/login/student", student.toJSON()));
     }

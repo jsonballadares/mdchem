@@ -1261,7 +1261,7 @@ GameObject:
   - component: {fileID: 921442138}
   - component: {fileID: 921442137}
   m_Layer: 5
-  m_Name: RightRectangleTrigger
+  m_Name: AlkalineMetals
   m_TagString: RightBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2485,7 +2485,7 @@ GameObject:
   - component: {fileID: 2126423260}
   - component: {fileID: 2126423259}
   m_Layer: 5
-  m_Name: LeftRectangleTrigger
+  m_Name: AlkaliMetals
   m_TagString: LeftBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

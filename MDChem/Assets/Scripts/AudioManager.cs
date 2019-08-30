@@ -5,27 +5,45 @@ using UnityEngine.Audio;
 using System;
 
 /*
-Controls the playing of audio throughout the game
+Controls the playing of audio throughout the game. Using a single instance and the various methods
+avaliable to this class allows us to play, pause, and adjust audio.
  */
 public class AudioManager : MonoBehaviour
 {
+    //an array of Sound objects 
     public Sound[] sounds;
+
+    //the singleton instance of the class 
     public static AudioManager insance;
 
+    //the unity AudioSources we will be manipulating with the sound class
     private AudioSource[] allAudioSources;
 
-
+    /*
+    called before the start function is used in this case to initialize the singleton
+    and keep it persistent through different scenes
+     */
     void Awake()
     {
+        /*
+        if the field "instance" isnt initialized,
+        initialize it to whatever gameobject this script is attached to
+         */
         if (insance == null)
         {
             insance = this;
         }
         else
         {
+            /*
+            if the instance isnt null destroy the current gameobject 
+            the script is attached to ensures there is only one audiomanager
+             */
             Destroy(gameObject);
-            return;
+            return; //return to stop execution
         }
+        /* now that we have only one singleton object of the audio manager */
+
         DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
         {

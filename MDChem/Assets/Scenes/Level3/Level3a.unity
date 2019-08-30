@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 608805790}
   - component: {fileID: 608805789}
   m_Layer: 5
-  m_Name: LeftRectangleTrigger
+  m_Name: TransitionMetals
   m_TagString: LeftBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 889525253}
   - component: {fileID: 889525252}
   m_Layer: 5
-  m_Name: RightRectangleTrigger
+  m_Name: Metalloids
   m_TagString: RightBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2483,11 +2483,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 988561726168827928, guid: a92abeaf6985e42f4811c371ffa944a5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 988561724103354024, guid: a92abeaf6985e42f4811c371ffa944a5,
         type: 3}
       propertyPath: m_Text
@@ -2632,6 +2627,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Alpha
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988561726168827928, guid: a92abeaf6985e42f4811c371ffa944a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92abeaf6985e42f4811c371ffa944a5, type: 3}

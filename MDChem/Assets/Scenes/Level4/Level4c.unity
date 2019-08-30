@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 517982416}
   - component: {fileID: 517982415}
   m_Layer: 5
-  m_Name: RightRectangleTrigger
+  m_Name: 6A
   m_TagString: RightBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2030,7 +2030,7 @@ GameObject:
   - component: {fileID: 1394273778}
   - component: {fileID: 1394273777}
   m_Layer: 5
-  m_Name: LeftRectangleTrigger
+  m_Name: 5A
   m_TagString: LeftBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

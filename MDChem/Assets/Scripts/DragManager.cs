@@ -2084,12 +2084,11 @@ public class DragManager : MonoBehaviour
         for (int i = 0; i < dropPanel.childCount; i++)
         {
             attempt += dropPanel.GetChild(i).name;
-
         }
 
-        LastLevelGameData.attemptArray.Add(formula + "," + attempt);
+        LastLevelGameData.correctAttemptArray.Add(formula + "=" + attempt);
 
-        foreach (string item in LastLevelGameData.attemptArray)
+        foreach (string item in LastLevelGameData.correctAttemptArray)
         {
             Debug.Log("in the array " + item);
         }
@@ -2098,7 +2097,7 @@ public class DragManager : MonoBehaviour
         rightCounter++;
         FindObjectOfType<AudioManager>().Play("correctnoise");
         //score 15 to win
-        if (rightCounter >= 15)
+        if (rightCounter >= 2)
         {
 
             //beat the game
@@ -2151,10 +2150,11 @@ public class DragManager : MonoBehaviour
                     //see a tutor dialog and 1 star for completion
                 }
 
-                Drag.incorrectDataStatic = LastLevelGameData.attemptArray;
+                Drag.incorrectDataStatic = LastLevelGameData.incorrectAttemptArray;
+                Drag.correctDataStatic = LastLevelGameData.correctAttemptArray;
                 Drag d = new Drag("10", points);
                 StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
-
+                Drag.clearArrays();
                 // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
                 // {
                 //     Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -2205,8 +2205,8 @@ public class DragManager : MonoBehaviour
 
         }
 
-        LastLevelGameData.attemptArray.Add(formula + "," + attempt);
-        foreach (string item in LastLevelGameData.attemptArray)
+        LastLevelGameData.incorrectAttemptArray.Add(formula + "=" + attempt);
+        foreach (string item in LastLevelGameData.incorrectAttemptArray)
         {
             Debug.Log("in the array " + item);
         }

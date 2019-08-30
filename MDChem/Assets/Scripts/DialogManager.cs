@@ -62,15 +62,21 @@ public class DialogManager : MonoBehaviour
 
             }
 
-            if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                d.Add("score", score.ToString());
-                d.Add("uuid", PlayerPrefs.GetString("ui"));
-                d.Add("levelid", "1");
-                FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+            Drag d = new Drag("1a", score);
+            StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+            Debug.Log("DA JSON ------> " + d.toJSON());
+            Drag.clearArrays();
 
-            }
+
+            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+            // {
+            //     Dictionary<string, string> d = new Dictionary<string, string>();
+            //     d.Add("score", score.ToString());
+            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+            //     d.Add("levelid", "1");
+            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+
+            // }
 
             if (GameObject.FindGameObjectWithTag("ScoreManager") != null)
             {
@@ -92,15 +98,18 @@ public class DialogManager : MonoBehaviour
                 Debug.Log("THE SCORE FOR LEVEL 2 IS ---> " + score);
             }
 
-            if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                d.Add("score", score.ToString());
-                d.Add("uuid", PlayerPrefs.GetString("ui"));
-                d.Add("levelid", "2");
-                FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
-            }
-
+            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+            // {
+            //     Dictionary<string, string> d = new Dictionary<string, string>();
+            //     d.Add("score", score.ToString());
+            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+            //     d.Add("levelid", "2");
+            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+            // }
+            Drag d = new Drag("2a", score);
+            StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+            Debug.Log("DA JSON ------> " + d.toJSON());
+            Drag.clearArrays();
             if (PlayerPrefs.GetInt("Level2_score") < score)
             {
                 PlayerPrefs.SetInt("Level2_score", score);
@@ -128,15 +137,20 @@ public class DialogManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level3_score", score);
             }
 
-            if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                d.Add("score", score.ToString());
-                d.Add("uuid", PlayerPrefs.GetString("ui"));
-                d.Add("levelid", "4");
-                FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+            // {
+            //     Dictionary<string, string> d = new Dictionary<string, string>();
+            //     d.Add("score", score.ToString());
+            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+            //     d.Add("levelid", "4");
+            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
 
-            }
+            // }
+            Drag d = new Drag("3a", score);
+            StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+            Debug.Log("DA JSON ------> " + d.toJSON());
+            Drag.clearArrays();
+
             if (GameObject.FindGameObjectWithTag("ScoreManager") != null)
             {
                 FindObjectOfType<ScoreManager>().zeroScore();
@@ -155,15 +169,19 @@ public class DialogManager : MonoBehaviour
                 score = FindObjectOfType<ScoreManager>().getScore();
                 Debug.Log("THE SCORE FOR LEVEL 4 IS ---> " + score);
             }
-            if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                d.Add("score", score.ToString());
-                d.Add("uuid", PlayerPrefs.GetString("ui"));
-                d.Add("levelid", "4");
-                FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+            // {
+            //     Dictionary<string, string> d = new Dictionary<string, string>();
+            //     d.Add("score", score.ToString());
+            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+            //     d.Add("levelid", "4");
+            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
 
-            }
+            // }
+            Drag d = new Drag("4a", score);
+            StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+            Debug.Log("DA JSON ------> " + d.toJSON());
+            Drag.clearArrays();
             if (PlayerPrefs.GetInt("Level4_score") < score)
             {
                 PlayerPrefs.SetInt("Level4_score", score);
@@ -350,15 +368,20 @@ public class DialogManager : MonoBehaviour
             }
 
 
-            if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                d.Add("score", score.ToString());
-                d.Add("uuid", PlayerPrefs.GetString("ui"));
-                d.Add("levelid", "1");
-                FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+            // {
+            //     Dictionary<string, string> d = new Dictionary<string, string>();
+            //     d.Add("score", score.ToString());
+            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+            //     d.Add("levelid", "1");
+            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
 
-            }
+            // }
+            Drag d = new Drag("1a", score);
+            StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+            Debug.Log("DA JSON ------> " + d.toJSON());
+            Drag.clearArrays();
+
 
             if (GameObject.FindGameObjectWithTag("ScoreManager") != null)
             {
@@ -410,15 +433,19 @@ public class DialogManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level2_score", score);
             }
 
-            if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                d.Add("score", score.ToString());
-                d.Add("uuid", PlayerPrefs.GetString("ui"));
-                d.Add("levelid", "2");
-                FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+            // {
+            //     Dictionary<string, string> d = new Dictionary<string, string>();
+            //     d.Add("score", score.ToString());
+            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+            //     d.Add("levelid", "2");
+            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
 
-            }
+            // }
+            Drag d = new Drag("2a", score);
+            StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+            Debug.Log("DA JSON ------> " + d.toJSON());
+            Drag.clearArrays();
             if (GameObject.FindGameObjectWithTag("ScoreManager") != null)
             {
                 FindObjectOfType<ScoreManager>().zeroScore();
@@ -468,15 +495,19 @@ public class DialogManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level3_score", score);
             }
 
-            if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                d.Add("score", score.ToString());
-                d.Add("uuid", PlayerPrefs.GetString("ui"));
-                d.Add("levelid", "3");
-                FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+            // {
+            //     Dictionary<string, string> d = new Dictionary<string, string>();
+            //     d.Add("score", score.ToString());
+            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+            //     d.Add("levelid", "3");
+            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
 
-            }
+            // }
+            Drag d = new Drag("3a", score);
+            StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+            Debug.Log("DA JSON ------> " + d.toJSON());
+            Drag.clearArrays();
             if (GameObject.FindGameObjectWithTag("ScoreManager") != null)
             {
                 FindObjectOfType<ScoreManager>().zeroScore();
@@ -517,15 +548,19 @@ public class DialogManager : MonoBehaviour
                 Debug.Log("THE 4c SCORE IS ---> " + score);
             }
 
-            if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-                d.Add("score", score.ToString());
-                d.Add("uuid", PlayerPrefs.GetString("ui"));
-                d.Add("levelid", "4");
-                FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
+            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
+            // {
+            //     Dictionary<string, string> d = new Dictionary<string, string>();
+            //     d.Add("score", score.ToString());
+            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
+            //     d.Add("levelid", "4");
+            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
 
-            }
+            // }
+            Drag d = new Drag("4a", score);
+            StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
+            Debug.Log("DA JSON ------> " + d.toJSON());
+            Drag.clearArrays();
             if (PlayerPrefs.GetInt("Level4_score") < score)
             {
                 PlayerPrefs.SetInt("Level4_score", score);

@@ -5,5 +5,5 @@ using UnityEngine;
 public class Enviorment
 {
     //public static readonly string URL = "http://172.104.11.115:8080";
-    public static readonly string URL = "https://979fe5fd.ngrok.io";
+    public static readonly string URL = "http://172.104.11.115";
 }

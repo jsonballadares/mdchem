@@ -1002,7 +1002,7 @@ GameObject:
   - component: {fileID: 951654582}
   - component: {fileID: 951654581}
   m_Layer: 5
-  m_Name: RightRectangleTrigger
+  m_Name: Metalloids
   m_TagString: RightBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 1028259934}
   - component: {fileID: 1028259933}
   m_Layer: 5
-  m_Name: LeftRectangleTrigger
+  m_Name: TransitionMetals
   m_TagString: LeftBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,7 +11,6 @@ This class will be a singleton class that makes https requests
  */
 public class WebRequestManager : MonoBehaviour
 {
-    public GameObject signUpWindow;
     /*
     This method will register a user in the database
      */
@@ -81,7 +80,6 @@ public class WebRequestManager : MonoBehaviour
         Debug.Log("Status Code: " + request.responseCode);
         Debug.Log("Post Request Complete!");
     }
-
     public static IEnumerator sendData(string url, String jsonObject)
     {
         var request = new UnityWebRequest(url, "PATCH");
@@ -115,5 +113,33 @@ public class WebRequestManager : MonoBehaviour
         Debug.Log("Post Request Complete!");
     }
 
+    public static IEnumerator tokenCheck(string url, System.Action<bool> callback)
+    {
+        var request = new UnityWebRequest(url, "GET");
+        Debug.Log("DA COOKIE -------> " + request.GetResponseHeader("Cookie"));
+        request.SetRequestHeader("Content-Type", "application/json");
+        yield return request.SendWebRequest();
 
+        
+       
+        Debug.Log("THE TOKEN REQUEST REPONSE CODE -----> " + request.responseCode);
+
+
+        if (request.responseCode == 200)
+        {
+            Debug.Log("the token is good you dont need to login again");
+            callback(true);
+        }
+        else if (request.responseCode == 400)
+        {
+            Debug.Log("the token is expired so you need to login again");
+            callback(false);
+        }
+        else
+        {
+            callback(false);
+            Debug.Log("lmao not a 400 or a 200 idk bruh");
+        }
+
+    }
 }

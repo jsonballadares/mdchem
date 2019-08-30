@@ -30,12 +30,13 @@ public class rank_manager : MonoBehaviour
     public IEnumerator GetHighScore()
     {
         Debug.Log("Testing");
-        using (UnityWebRequest www = UnityWebRequest.Get("https://www.mdchem.app/api/highscore"))
+        using (UnityWebRequest www = UnityWebRequest.Get(Enviorment.URL + "/api/players/highscore"))
         {
             yield return www.SendWebRequest();
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);
+                Debug.Log("From the server " + www.downloadHandler.text);
                 for (int i = 0; i < rank_items.Length; i++)
                 {
                     rank_items[i].name_text.text = "Error";
@@ -64,10 +65,11 @@ public class rank_manager : MonoBehaviour
         {
             Debug.Log("The data is ---> score " + entries.score + " user ---> " + entries.user);
         }
+        
 
         /* we have the users inorder in score.scores so now we just need to update the ui */
-
-        for (int i = 0; i < rank_items.Length; i++)
+        
+        for (int i = 0; i < score.scores.Count; i++)
         {
             rank_items[i].name_text.text = score.scores[i].user.Split('@')[0];
             rank_items[i].rank_number_text.text = (i + 1).ToString();
