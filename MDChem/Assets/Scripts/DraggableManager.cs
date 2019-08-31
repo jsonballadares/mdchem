@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+This class handles every game mode with draggable objects
+ */
 public class DraggableManager : MonoBehaviour
 {
     [SerializeField] Transform DragPanel, DropPanel;

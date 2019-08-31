@@ -1,8 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FullSerializer;
-using UnityEngine;
 using System;
+
+/*
+This is the data model for all the levels that require dragging so the beginner levels
+and levels 6 7 9
+ */
 public class Drag
 {
     public string levelID;
@@ -13,16 +16,19 @@ public class Drag
     public List<string> correctData;
     public List<string> incorrectData;
 
-
+    /*
+    Initializes values for a drag object
+     */
     public Drag(string levelID, int score)
     {
-        this.score = score;
-        this.levelID = levelID;
+        this.score = score; /* score for the level */
+        this.levelID = levelID; /* the level we are on */
         incorrectData = incorrectDataStatic;
         correctData = correctDataStatic;
     }
+
     /*
-    Returns a student object as a JSON
+    Returns a Drag object as a JSON
      */
     public string toJSON()
     {
@@ -41,6 +47,9 @@ public class Drag
         return fsJsonPrinter.CompressedJson(data);
     }
 
+    /*
+    clears the static arrays so we dont have any overlapping data
+     */
     public static void clearArrays()
     {
         correctDataStatic.Clear();

@@ -254,7 +254,7 @@ public class FormManager : MonoBehaviour
         {
             //in this case they have logged in before but theyre signing in with a different account
             PlayerPrefs.DeleteAll();
-            UnityWebRequest.ClearCookieCache();
+            //UnityWebRequest.ClearCookieCache(); cookie gets updated automatically no need to clear confirm with earl
             PlayerPrefs.SetString("email", email);
         }
         else

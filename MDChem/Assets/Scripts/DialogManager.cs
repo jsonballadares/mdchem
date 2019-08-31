@@ -1,47 +1,55 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
 
-
+/*
+This class handles anything that deals with dialog windows in the game
+ */
 public class DialogManager : MonoBehaviour
 {
     public GameObject loginScreen;
+
+    /*
+    deletes a local profile aka clears cache and player prefs
+    so it takes the user to the login screen
+     */
     public void deleteProfile()
     {
-        Debug.Log("Write code to delete a profile locally");
-        Debug.Log("Write code to delete a profile locally");
-        //delete user profile
         PlayerPrefs.DeleteAll();
         UnityWebRequest.ClearCookieCache();
-        //erase their data from ui
-        //clear player pref
-        //pop up a sign up/sign in window       
         loginScreen.SetActive(true);
     }
-    public void debugLogButton()
-    {
-        Debug.Log("TESTING BUTTON");
-    }
+
+    /*
+    Will play the button noise for when a button is clicked
+     */
     public void playButtonNoise()
     {
-        FindObjectOfType<AudioManager>().Play("buttonnoise");
+        if (GameObject.FindGameObjectWithTag("AudioManager"))
+            FindObjectOfType<AudioManager>().Play("buttonnoise");
     }
 
+    /*
+    This is the code that is ran when the finish button is pressed
+     */
     public void onFinishGameButtonPress()
     {
         if (GameObject.FindGameObjectWithTag("RandomQuizNumbers"))
-        {
             FindObjectOfType<RandomQuizNumbers>().Destroy();
-        }
+
         FindObjectOfType<SceneFader>().FadeTo("LevelSelector");
     }
 
+    /*
+    This code will handle all the dialogs that have the level selector button
+    which will take the user back to the level selector scene. Dependent on which
+    scene this code is triggered from various things need to happen like sending 
+    data saving stuff etc
+     */
     public void onLevelSelectorButtonPress()
     {
-        FindObjectOfType<AudioManager>().Play("buttonnoise");
+        playButtonNoise();
 
         /*
         if at end of level that matters fort score save it 
@@ -58,6 +66,7 @@ public class DialogManager : MonoBehaviour
                 score = FindObjectOfType<ScoreManager>().getScore();
                 Debug.Log("THE SCORE FOR LEVEL 2 IS ---> " + FindObjectOfType<ScoreManager>().getScore());
             }
+            
             if (PlayerPrefs.GetInt("Level1_score") < score)
             {
                 PlayerPrefs.SetInt("Level1_score", score);
@@ -70,15 +79,6 @@ public class DialogManager : MonoBehaviour
             Drag.clearArrays();
 
 
-            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            // {
-            //     Dictionary<string, string> d = new Dictionary<string, string>();
-            //     d.Add("score", score.ToString());
-            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
-            //     d.Add("levelid", "1");
-            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
-
-            // }
 
             if (GameObject.FindGameObjectWithTag("ScoreManager") != null)
             {
@@ -100,14 +100,7 @@ public class DialogManager : MonoBehaviour
                 Debug.Log("THE SCORE FOR LEVEL 2 IS ---> " + score);
             }
 
-            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            // {
-            //     Dictionary<string, string> d = new Dictionary<string, string>();
-            //     d.Add("score", score.ToString());
-            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
-            //     d.Add("levelid", "2");
-            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
-            // }
+
             Drag d = new Drag("2a", score);
             StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
             Debug.Log("DA JSON ------> " + d.toJSON());
@@ -139,15 +132,7 @@ public class DialogManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level3_score", score);
             }
 
-            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            // {
-            //     Dictionary<string, string> d = new Dictionary<string, string>();
-            //     d.Add("score", score.ToString());
-            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
-            //     d.Add("levelid", "4");
-            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
 
-            // }
             Drag d = new Drag("3a", score);
             StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
             Debug.Log("DA JSON ------> " + d.toJSON());
@@ -171,15 +156,7 @@ public class DialogManager : MonoBehaviour
                 score = FindObjectOfType<ScoreManager>().getScore();
                 Debug.Log("THE SCORE FOR LEVEL 4 IS ---> " + score);
             }
-            // if (GameObject.FindGameObjectWithTag("WebRequestManager") != null)
-            // {
-            //     Dictionary<string, string> d = new Dictionary<string, string>();
-            //     d.Add("score", score.ToString());
-            //     d.Add("uuid", PlayerPrefs.GetString("ui"));
-            //     d.Add("levelid", "4");
-            //     FindObjectOfType<WebRequest>().PostData(d, FindObjectOfType<WebRequest>().buildJSON());
 
-            // }
             Drag d = new Drag("4a", score);
             StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
             Debug.Log("DA JSON ------> " + d.toJSON());

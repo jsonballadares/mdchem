@@ -131,15 +131,9 @@
      <Compile Include="Assets\mobile game menu kit\script\UI template\UI_Skin.cs" />
      <Compile Include="Assets\mobile game menu kit\script\UI template\UI_Template.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
-     <Compile Include="Assets\Scripts\BackToMain.cs" />
-     <Compile Include="Assets\Scripts\ButtonPressPlayer.cs" />
-     <Compile Include="Assets\Scripts\DialogBoxController.cs" />
-     <Compile Include="Assets\Scripts\DialogBoxTextChanger.cs" />
      <Compile Include="Assets\Scripts\DialogManager.cs" />
-     <Compile Include="Assets\Scripts\DiffilcultyToggleHandler.cs" />
      <Compile Include="Assets\Scripts\Drag.cs" />
      <Compile Include="Assets\Scripts\Draggable.cs" />
-     <Compile Include="Assets\Scripts\DraggableGameData.cs" />
      <Compile Include="Assets\Scripts\DraggableGameManager.cs" />
      <Compile Include="Assets\Scripts\DraggableManager.cs" />
      <Compile Include="Assets\Scripts\DragHandeler.cs" />
@@ -200,7 +194,6 @@
      <Compile Include="Assets\Scripts\UiCanvasFader.cs" />
      <Compile Include="Assets\Scripts\UpdateUserList.cs" />
      <Compile Include="Assets\Scripts\VideoProgressBar.cs" />
-     <Compile Include="Assets\Scripts\WebRequest.cs" />
      <Compile Include="Assets\Scripts\WebRequestManager.cs" />
      <Compile Include="Assets\Source\Converters\fsArrayConverter.cs" />
      <Compile Include="Assets\Source\Converters\fsDateConverter.cs" />
