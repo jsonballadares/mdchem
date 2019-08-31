@@ -131,7 +131,6 @@
      <Compile Include="Assets\mobile game menu kit\script\UI template\UI_Skin.cs" />
      <Compile Include="Assets\mobile game menu kit\script\UI template\UI_Template.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
-     <Compile Include="Assets\Scripts\AuthManager.cs" />
      <Compile Include="Assets\Scripts\BackToMain.cs" />
      <Compile Include="Assets\Scripts\ButtonPressPlayer.cs" />
      <Compile Include="Assets\Scripts\DialogBoxController.cs" />
@@ -195,6 +194,7 @@
      <Compile Include="Assets\Scripts\StatusTextDefault.cs" />
      <Compile Include="Assets\Scripts\StreamVideo.cs" />
      <Compile Include="Assets\Scripts\Student.cs" />
+     <Compile Include="Assets\Scripts\sumPause\Scripts\SumPause.cs" />
      <Compile Include="Assets\Scripts\TimeManager.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\UiCanvasFader.cs" />
@@ -254,8 +254,7 @@
      <Compile Include="Assets\Source\Reflection\fsMetaType.cs" />
      <Compile Include="Assets\Source\Reflection\fsReflectionUtility.cs" />
      <Compile Include="Assets\Source\Reflection\fsTypeCache.cs" />
-     <Compile Include="Assets\sumPause\Scripts\SumPause.cs" />
-     <None Include="Assets\sumPause\README.md.txt" />
+     <None Include="Assets\Scripts\sumPause\README.md.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\Fonts\Roboto\LICENSE.txt" />

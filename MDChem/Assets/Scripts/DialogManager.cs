@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 
 
@@ -14,6 +15,7 @@ public class DialogManager : MonoBehaviour
         Debug.Log("Write code to delete a profile locally");
         //delete user profile
         PlayerPrefs.DeleteAll();
+        UnityWebRequest.ClearCookieCache();
         //erase their data from ui
         //clear player pref
         //pop up a sign up/sign in window       

@@ -1,22 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
+/*
+This class acts as a manager for the home screen
+ */
 public class HomeManager : MonoBehaviour
 {
     public Toggle beginner;
     public Toggle advanced;
     public GameObject loginScreen;
 
-    // Start is called before the first frame update
     void Start()
     {
 
         //UnityWebRequest.ClearCookieCache();
+        //PlayerPrefs.DeleteAll();
         Debug.Log("The current user is " + PlayerPrefs.GetString("email"));
-        Debug.Log("The current users uuid is " + PlayerPrefs.GetString("ui"));
         if (GameObject.FindGameObjectWithTag("AudioManager") != null)
         {
             FindObjectOfType<AudioManager>().Play("levelselectnoise");
@@ -78,25 +78,12 @@ public class HomeManager : MonoBehaviour
             }
         }
 
-
-        /*
-        Checks to see if there is a uuid in the player pref if there isnt we need 
-        to delete all the player prefs and ask the user to sign in/up
-        */
-
-        if (!PlayerPrefs.HasKey("ui") || PlayerPrefs.GetString("ui") == null || PlayerPrefs.GetString("ui").Equals(""))
-        {
-            Debug.Log("UUID IS NULL");
-            PlayerPrefs.DeleteAll();
-            loginScreen.SetActive(true);
-        }
-        else
-        {
-            Debug.Log("UUID IS ---> " + PlayerPrefs.GetString("ui"));
-        }
     }
 
-
+    /*
+    checks to see if the token is experied if it is we prompt the user to sign in again
+    which gives them a new token
+     */
     public void checkTokenStatus()
     {
         StartCoroutine(WebRequestManager.tokenCheck(Enviorment.URL + "/api/auth/ping", (myReturnValue) =>
@@ -114,7 +101,6 @@ public class HomeManager : MonoBehaviour
                 loginScreen.SetActive(true);
             }
         }));
-        //StartCoroutine(WebRequestManager.tokenCheck(Enviorment.URL + "/api/auth/ping"));
     }
 
 }

@@ -10,8 +10,7 @@ public class PlayerButtonTextUpdate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (!(PlayerPrefs.GetString("ui") == null || PlayerPrefs.GetString("ui") == ""))
+        if (PlayerPrefs.HasKey("email"))
         {
             // Debug.Log("The users email " + PlayerPrefs.GetString("email"));
             // Debug.Log("The users uiid " + PlayerPrefs.GetString("ui"));
