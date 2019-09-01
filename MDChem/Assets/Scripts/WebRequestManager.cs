@@ -98,31 +98,40 @@ public class WebRequestManager : MonoBehaviour
      */
     public static IEnumerator sendData(string url, String jsonObject)
     {
-        var request = new UnityWebRequest(url, "PATCH");
-        byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonObject);
+        if (!PlayerPrefs.GetString("email").Equals("guest@guest.com"))
+        {
+            var request = new UnityWebRequest(url, "PATCH");
+            byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonObject);
 
-        request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
-        request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
-        request.SetRequestHeader("Content-Type", "application/json");
+            request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
 
-        yield return request.SendWebRequest();
+            yield return request.SendWebRequest();
 
-        Debug.Log(request.downloadHandler.text);
-        Debug.Log("RESPONSE COOKIE " + request.GetResponseHeader("Set-Cookie"));
 
-        /*
-        a 200 means a success the user has been registered 
-        anything else means a failure if failure than make the user try again
-        once a 200 is hit save the user data in player prefs and allow them to change
-        scenes
-         */
-        if (request.responseCode == 200)
-            Debug.Log("good youve sent some data from " + SceneManager.GetActiveScene().name);
+            Debug.Log(request.downloadHandler.text);
+            Debug.Log("RESPONSE COOKIE " + request.GetResponseHeader("Set-Cookie"));
+
+            /*
+            a 200 means a success the user has been registered 
+            anything else means a failure if failure than make the user try again
+            once a 200 is hit save the user data in player prefs and allow them to change
+            scenes
+             */
+            if (request.responseCode == 200)
+                Debug.Log("good youve sent some data from " + SceneManager.GetActiveScene().name);
+            else
+                Debug.Log("mistakes where made data couldnt be sent");
+
+            Debug.Log("Status Code: " + request.responseCode);
+            Debug.Log("Post Request Complete!");
+        }
         else
-            Debug.Log("mistakes where made data couldnt be sent");
+        {
+            Debug.Log("guest login therefore there is no need to send data");
+        }
 
-        Debug.Log("Status Code: " + request.responseCode);
-        Debug.Log("Post Request Complete!");
     }
 
     /*

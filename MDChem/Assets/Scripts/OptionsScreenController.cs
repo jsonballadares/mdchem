@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 
 public class OptionsScreenController : MonoBehaviour
 {
     public Slider music_slider;
-
     public Slider sfx_slider;
     public void Update_music_volume()
     {

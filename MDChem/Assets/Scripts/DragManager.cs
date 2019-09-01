@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -23,12 +20,6 @@ public class DragManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        // Drag d = new Drag("1b",999);
-        // Debug.Log("DA JSON -> " + d.toJSON());
-        // StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
-    }
     private bool doesNameMatch()
     {
 
@@ -330,6 +321,7 @@ public class DragManager : MonoBehaviour
                         elements += dropPanel.GetChild(i).GetChild(0).name;
                     }
                     Drag.correctDataStatic.Add("AlkalineMetals=" + elements);
+                    Debug.Log("THE POINTS SENT IS " + points);
                     Drag d = new Drag("1b", points);
                     StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", d.toJSON()));
                     Drag.clearArrays();

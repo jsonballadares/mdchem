@@ -113,6 +113,8 @@ public class FormManager : MonoBehaviour
         //make a "guest user"
         //essentially a temp user figure out what player prefs and etc need to set up
         Debug.Log("Login Guest");
+        PlayerPrefs.SetString("email", "guest@guest.com");
+        SSTools.ShowMessage("Logging in as guest", SSTools.Position.bottom, SSTools.Time.twoSecond);
     }
 
     public void setPlayerPrefs()
@@ -286,6 +288,7 @@ public class FormManager : MonoBehaviour
                  loginPasswordInput.text = signUpPasswordInput.text.ToLower();
                  emptyInputBoxSignUp();
                  //notify the user
+                 SSTools.ShowMessage("Signed up ", SSTools.Position.bottom, SSTools.Time.twoSecond);
              }
              /* if myReturnValue is false then leave the sign up screen and notify the user to try again (use toast pop up) */
              else
@@ -294,6 +297,7 @@ public class FormManager : MonoBehaviour
                  signUpScreen.SetActive(true);
                  emptyInputBoxSignUp();
                  //notify the user
+                 SSTools.ShowMessage("Couldn't sign up ", SSTools.Position.bottom, SSTools.Time.twoSecond);
              }
          }));
     }
@@ -319,6 +323,7 @@ public class FormManager : MonoBehaviour
                  loginScreen.SetActive(false);
                  emptyInputBoxLogin();
                  //notify the user
+                 SSTools.ShowMessage("Logged in ", SSTools.Position.bottom, SSTools.Time.twoSecond);
              }
              /* if myReturnValue is false then leave the login screen up and notify the user to try again (use toast pop up) */
              else
@@ -328,6 +333,7 @@ public class FormManager : MonoBehaviour
                  loginScreen.SetActive(true);
                  emptyInputBoxLogin();
                  //notify the user
+                 SSTools.ShowMessage("Couldn't login please try again! ", SSTools.Position.bottom, SSTools.Time.twoSecond);
              }
          }));
     }

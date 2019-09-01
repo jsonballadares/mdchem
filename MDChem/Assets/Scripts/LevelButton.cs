@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+/*
+used for the level buttons in the level selector
+ */
 public class LevelButton : MonoBehaviour
 {
     public Text LevelText;

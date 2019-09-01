@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using UnityEngine.EventSystems;
-using UnityEngine.Networking;
+
 
 public class LevelManager : MonoBehaviour
 {
@@ -24,7 +21,7 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         //PlayerPrefs.DeleteAll();
-        Debug.Log("UUID IN LEVELMANAGER IS FROM SHARED PREF ----> " + PlayerPrefs.GetString("ui"));
+        //Debug.Log("UUID IN LEVELMANAGER IS FROM SHARED PREF ----> " + PlayerPrefs.GetString("ui"));
         if (GameObject.FindGameObjectWithTag("AudioManager") != null)
         {
             FindObjectOfType<AudioManager>().StopAllAudio();
@@ -81,7 +78,7 @@ public class LevelManager : MonoBehaviour
              */
 
             if (PlayerPrefs.GetInt("Level" + button.LevelText.text + "_score") >= 700)
-            { 
+            {
                 if (AchievementManager.THIS)
                 {
                     AchievementManager.THIS.UnlockAchievement(2);

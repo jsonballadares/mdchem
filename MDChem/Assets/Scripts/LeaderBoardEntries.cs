@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿/*
+this class is used to make the leaderboard entry objects
+ */
 
 [System.Serializable]
 public class LeaderBoardEntries

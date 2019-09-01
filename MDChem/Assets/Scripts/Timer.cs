@@ -64,62 +64,10 @@ public class Timer : MonoBehaviour
 
     IEnumerator ChangeScene()
     {
-        Debug.Log(buildJSON(Element.elementArray));
         //clear the array for next scene
         //pause execution for 3 seconds
         yield return new WaitForSeconds(3);
         SceneChanger();
-    }
-
-    private string buildJSON(ArrayList l)
-    {
-
-        string correct = "", missed = "", incorrect = "";
-
-        foreach (Element item in l)
-        {
-            switch (item.state)
-            {
-                case Element.State.Correct:
-
-                    if (correct.Equals(""))
-                    {
-                        //not formatted correctly
-                        //correct += “{\“element\“:\” ” + item.getName() + “\”, \“duration\“: \"” + item.getDuration() + ""\ }“;
-                    }
-                    else
-                    {
-                        correct += ",{\"element\":\" " + item.getName() + "\", \"duration\":" + item.getDuration() + " }";
-                    }
-
-                    break;
-                case Element.State.Incorrect:
-
-                    if (correct.Equals(""))
-                    {
-                        incorrect += "{\"element\":\" " + item.getName() + "\", \"duration\":" + item.getDuration() + " }";
-                    }
-                    else
-                    {
-                        incorrect += ",{\"element\":\" " + item.getName() + "\", \"duration\":" + item.getDuration() + " }";
-                    }
-
-                    break;
-                case Element.State.Missed:
-                    if (correct.Equals(""))
-                    {
-                        missed += "{\"element\":\" " + item.getName() + "\", \"duration\":" + item.getDuration() + " }";
-                    }
-                    else
-                    {
-                        missed += ",{\"element\":\" " + item.getName() + "\", \"duration\":" + item.getDuration() + " }";
-                    }
-
-                    break;
-            }
-        }
-
-        return "{  \"data\": [    {      \"correct\": [        " + correct + "      ]    },    {      \"incorrect\": [        " + incorrect + "      ]    },    {      \"missed\": [        " + missed + "      ]    }  ]}";
     }
 
     /*

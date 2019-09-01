@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+this script is used to randomize
+ */
 public class DropPanelChildRandomizer : MonoBehaviour
 {
     // Start is called before the first frame update

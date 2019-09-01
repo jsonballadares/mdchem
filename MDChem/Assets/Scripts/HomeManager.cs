@@ -86,21 +86,26 @@ public class HomeManager : MonoBehaviour
      */
     public void checkTokenStatus()
     {
-        StartCoroutine(WebRequestManager.tokenCheck(Enviorment.URL + "/api/auth/ping", (myReturnValue) =>
+        if (!PlayerPrefs.GetString("email").Equals("guest@guest.com"))
         {
-            if (myReturnValue)
+            StartCoroutine(WebRequestManager.tokenCheck(Enviorment.URL + "/api/auth/ping", (myReturnValue) =>
             {
+                if (myReturnValue)
+                {
                 //dont bring up the login screen
                 Debug.Log("The token isnt expired therefore no need to login so dont bring the screen up");
-                loginScreen.SetActive(false);
-            }
-            else
-            {
+                    loginScreen.SetActive(false);
+                }
+                else
+                {
                 //bring up the login screen
                 Debug.Log("The token is expired therefore we need to bring up the login so they can renew it");
-                loginScreen.SetActive(true);
-            }
-        }));
+                    loginScreen.SetActive(true);
+                }
+            }));
+        }else{
+            Debug.Log("guest login no need to check for cookie");
+        }
     }
 
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Initializer : MonoBehaviour {
@@ -8,6 +6,7 @@ public class Initializer : MonoBehaviour {
 	This script will initialize various elements for levels 1 - 4
 	 */
 	void Awake(){
+		
 		Application.targetFrameRate = 60;
 	}
 
