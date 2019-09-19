@@ -290,6 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &28728080
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1149,6 +1151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &354737397
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1249,6 +1253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &362942536
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1349,6 +1355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &367110743
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1645,6 +1653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &452451299
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2370,6 +2380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &734867825
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2670,6 +2682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &846240110
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3091,7 +3105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1015704327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b80582b01eb95445bcdacbead60619d, type: 3}
+  m_Script: {fileID: 11500000, guid: aaf7da0ae0bedc8408a7f8f86db693ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFader: {fileID: 1993666081}
@@ -3279,6 +3293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1074095928
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3982,6 +3998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1414128156
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4132,6 +4150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1485846720
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4273,6 +4293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1524114089
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4610,6 +4632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1604668503
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5176,6 +5200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1926244400
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5414,6 +5440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &2001430149
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5538,7 +5566,7 @@ PrefabInstance:
     - target: {fileID: 988561725328431258, guid: a92abeaf6985e42f4811c371ffa944a5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15.150002
+      value: 15.150024
       objectReference: {fileID: 0}
     - target: {fileID: 988561725328431258, guid: a92abeaf6985e42f4811c371ffa944a5,
         type: 3}

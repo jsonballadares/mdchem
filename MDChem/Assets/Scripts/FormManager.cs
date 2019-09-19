@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
-using UnityEngine.Networking;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 public class FormManager : MonoBehaviour
 {
@@ -289,6 +289,8 @@ public class FormManager : MonoBehaviour
                  emptyInputBoxSignUp();
                  //notify the user
                  SSTools.ShowMessage("Signed up ", SSTools.Position.bottom, SSTools.Time.twoSecond);
+
+
              }
              /* if myReturnValue is false then leave the sign up screen and notify the user to try again (use toast pop up) */
              else
@@ -324,6 +326,40 @@ public class FormManager : MonoBehaviour
                  emptyInputBoxLogin();
                  //notify the user
                  SSTools.ShowMessage("Logged in ", SSTools.Position.bottom, SSTools.Time.twoSecond);
+                 //setup the stars
+                 StartCoroutine(WebRequestManager.getScores(Enviorment.URL + "/api/player/stars.csv", (request) =>
+                 {
+                     if (request.responseCode == 200)
+                     {
+                         String stars = request.downloadHandler.text;
+                         Debug.Log("THIS SHOULD BE A CSV ----> " + stars);
+                         if(string.IsNullOrEmpty(stars))
+                         {
+
+                         }
+                         else
+                         {
+                             String[] arr = stars.Split(',');
+
+                             var dict = new Dictionary<string, int>();
+
+                             foreach (var item in arr)
+                             {
+                                 String[] kvPairs = item.Split('=');
+                                 dict.Add(kvPairs[0], Int32.Parse(kvPairs[1]));
+                             }
+
+                             foreach (KeyValuePair<string, int> kvp in dict)
+                             {
+                                 Debug.Log("Key = " + kvp.Key + " Value = " + kvp.Value);
+                             }
+                         }
+                     }
+                     else
+                     {
+
+                     }
+                 }));
              }
              /* if myReturnValue is false then leave the login screen up and notify the user to try again (use toast pop up) */
              else

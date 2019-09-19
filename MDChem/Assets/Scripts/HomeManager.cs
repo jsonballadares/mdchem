@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
@@ -13,7 +15,7 @@ public class HomeManager : MonoBehaviour
 
     void Start()
     {
-
+        PlayerPrefs.SetString("data", @"{""levelID"":""1b"",""score"":500,""correctData"":[""AlkaliMetals=LiNaKRbCs"",""AlkaliMetals=LiNaKRbCs"",""AlkalineMetals=SrCaBaBeMg"",""AlkalineMetals=BaBeSrMgCa""],""incorrectData"":[]}|{""levelID"":""2b"",""score"":500,""correctData"":[""AlkaliMetals=LiNaKRbCs"",""AlkaliMetals=LiNaKRbCs"",""AlkalineMetals=SrCaBaBeMg"",""AlkalineMetals=BaBeSrMgCa""],""incorrectData"":[]}|{""levelID"":""3b"",""score"":500,""correctData"":[""AlkaliMetals=LiNaKRbCs"",""AlkaliMetals=LiNaKRbCs"",""AlkalineMetals=SrCaBaBeMg"",""AlkalineMetals=BaBeSrMgCa""],""incorrectData"":[]}|{""levelID"":""4b"",""score"":500,""correctData"":[""AlkaliMetals=LiNaKRbCs"",""AlkaliMetals=LiNaKRbCs"",""AlkalineMetals=SrCaBaBeMg"",""AlkalineMetals=BaBeSrMgCa""],""incorrectData"":[]}");
         //UnityWebRequest.ClearCookieCache();
         //PlayerPrefs.DeleteAll();
         Debug.Log("The current user is " + PlayerPrefs.GetString("email"));
@@ -23,6 +25,37 @@ public class HomeManager : MonoBehaviour
         }
         checkLogin();
         checkTokenStatus();
+    }
+
+    public void deCacheData()
+    {
+        /*
+        SEND THE ENTIRE STRING INSTEAD OF THE INDIVIDUAL
+         */
+        if (PlayerPrefs.HasKey("data"))
+        {
+            // String dataToSend = PlayerPrefs.GetString("data");
+            // StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", dataToSend));
+            String dataToSend = PlayerPrefs.GetString("data");
+            var stringArr = dataToSend.Split('|');
+            var stringList = new ArrayList(stringArr);
+            Debug.Log("BEFORE THE COUNT IS " + stringList.Count);
+            PlayerPrefs.DeleteKey("data");
+            foreach (var item in stringList)
+            {
+                Debug.Log("THE SIZE OF THE LIST " + stringList.Count);
+                StartCoroutine(WebRequestManager.sendData(Enviorment.URL + "/api/player/", (string)item, (request) =>
+                {
+                    Debug.Log("FOR LOOP RESPONSE CODE == " + request.responseCode);
+                    Debug.Log("RESPONSE TEXT " + request.downloadHandler.text);
+                    if (request.responseCode != 200)
+                    {
+                        WebRequestManager.cacheData((string)item);
+                    }
+                }));
+            }
+        }
+
     }
 
     public void setBeginnerDifficulty(bool isOn)
@@ -92,18 +125,21 @@ public class HomeManager : MonoBehaviour
             {
                 if (myReturnValue)
                 {
-                //dont bring up the login screen
-                Debug.Log("The token isnt expired therefore no need to login so dont bring the screen up");
+                    //dont bring up the login screen
+                    Debug.Log("The token isnt expired therefore no need to login so dont bring the screen up");
                     loginScreen.SetActive(false);
+                    deCacheData();
                 }
                 else
                 {
-                //bring up the login screen
-                Debug.Log("The token is expired therefore we need to bring up the login so they can renew it");
+                    //bring up the login screen
+                    Debug.Log("The token is expired therefore we need to bring up the login so they can renew it");
                     loginScreen.SetActive(true);
                 }
             }));
-        }else{
+        }
+        else
+        {
             Debug.Log("guest login no need to check for cookie");
         }
     }

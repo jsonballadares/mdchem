@@ -16,23 +16,23 @@ public class Student
     /*
     email: students email
     password: students password    
-    quesiton: recovery question 
+    question: recovery question 
     answer: recovery answer  
     group: class number
     */
     public string email;
     public string password;
-    public string quesiton;
+    public string question;
     public string answer;
     public int group;
     /* 
     Creates a student object with the given fields
     */
-    public Student(string email, string password, string quesiton, string answer, int group)
+    public Student(string email, string password, string question, string answer, int group)
     {
         this.email = email;
         this.password = password;
-        this.quesiton = quesiton;
+        this.question = question;
         this.answer = answer;
         this.group = group;
     }

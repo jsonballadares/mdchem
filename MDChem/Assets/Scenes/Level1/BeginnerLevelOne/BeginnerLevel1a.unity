@@ -324,6 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &54330800
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -515,7 +517,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 142122628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b80582b01eb95445bcdacbead60619d, type: 3}
+  m_Script: {fileID: 11500000, guid: aaf7da0ae0bedc8408a7f8f86db693ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneFader: {fileID: 1172345567}
@@ -617,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 3113408376125259764, guid: 8b913fc5758ee47e097a23d19bfc488c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15.154999
+      value: 15.155029
       objectReference: {fileID: 0}
     - target: {fileID: 3113408376125259764, guid: 8b913fc5758ee47e097a23d19bfc488c,
         type: 3}
@@ -1915,6 +1917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &638197583
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2087,12 +2091,12 @@ PrefabInstance:
     - target: {fileID: 988561725328431258, guid: a92abeaf6985e42f4811c371ffa944a5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.3250122
+      value: -1.3249512
       objectReference: {fileID: 0}
     - target: {fileID: 988561725328431258, guid: a92abeaf6985e42f4811c371ffa944a5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15.150002
+      value: 15.150024
       objectReference: {fileID: 0}
     - target: {fileID: 988561725328431258, guid: a92abeaf6985e42f4811c371ffa944a5,
         type: 3}
@@ -2514,6 +2518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &877952680
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2919,7 +2925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 29.400024, y: -24.149994}
+  m_AnchoredPosition: {x: 29.400024, y: -24.150024}
   m_SizeDelta: {x: 58.82, y: 48.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &981002205
@@ -3219,6 +3225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1137836413
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3842,6 +3850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1318195588
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4177,6 +4187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1428641796
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4277,6 +4289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1445564500
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4377,6 +4391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1603817096
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4609,6 +4625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1723793251
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4709,6 +4727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa2255fa98445a91e06d5415a2f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  startParent: {fileID: 0}
 --- !u!225 &1756820815
 CanvasGroup:
   m_ObjectHideFlags: 0

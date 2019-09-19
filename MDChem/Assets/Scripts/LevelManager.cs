@@ -94,6 +94,7 @@ public class LevelManager : MonoBehaviour
             }
 
 
+            Debug.Log("button.LevelText.text ---> " + button.LevelText.text);
             if (PlayerPrefs.GetInt("Level" + button.LevelText.text + "_score") >= 500)
             {
                 button.star1Locked.SetActive(false);
