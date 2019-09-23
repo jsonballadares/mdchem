@@ -88,7 +88,7 @@ public class QuizManager : MonoBehaviour
             unansweredQuestions = questions.ToList<Question>();
         }
         //score 15
-        if (score >= 3)
+        if (score >= 15)
         {
             QuizManager.clearQuestionsList();
             win();
