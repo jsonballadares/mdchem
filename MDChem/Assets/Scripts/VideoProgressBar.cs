@@ -13,6 +13,7 @@ public class VideoProgressBar : MonoBehaviour, IDragHandler, IPointerDownHandler
     private void Awake()
     {
         progress = GetComponent<Image>();
+        videoPlayer.playbackSpeed = videoPlayer.playbackSpeed / 1.8f;
     }
 
     private void Update()
